@@ -1,7 +1,6 @@
 # indiGo
 LG-WebOS internship project
 
-
 Notion link: https://www.notion.so/LG-193ad80b546749a3aa8438ac6af718d3
 
 
@@ -29,7 +28,7 @@ Notion link: https://www.notion.so/LG-193ad80b546749a3aa8438ac6af718d3
 * [Go-Jaecheol](https://github.com/Go-Jaecheol)
 * [choi-jaewon](https://github.com/choi-jaewon)
 * [nullyng](https://github.com/nullyng)
-* [OHJUYEONG](https://github.com/OHJUYEONG)
+* [ParkGyurim99](https://github.com/ParkGyurim99)
 
 <!-- ## Acknowledgments -->
 
