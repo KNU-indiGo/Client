@@ -1,0 +1,42 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,700);
+
+body,
+table,
+div,
+p {
+  font-family: ‘Roboto’, ‘Spoqa Han Sans’, ‘Spoqa Han Sans JP’, ‘Sans-serif’;
+}
+
+h1 {
+  text-align: center;
+  font-size: 70px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.list {
+  display: flex;
+}
+
+.photo {
+  width: 150px;
+  height: 100px;
+}
+
+.product {
+  margin: 70px;
+}
+
+.detail {
+  display: inline-block;
+  text-align: center;
+  align-items: center;
+}
+
+.container {
+  padding-top: 100px;
+  display: inline-block;
+  font-size: 30px;
+}
