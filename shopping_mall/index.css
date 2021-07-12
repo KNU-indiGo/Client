@@ -158,3 +158,39 @@ ul li {
   /* text-decoration: underline; */
   /* text-underline-offset: 7px; */
 }
+
+.remove {
+  background-color: red;
+  padding: 10px;
+  font-weight: 1000;
+  width: 80px;
+  margin-top: 20px;
+}
+
+.shopping_list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.shopping_list img {
+  width: 300px;
+  height: 150px;
+  margin-right: 40px;
+  object-fit: cover;
+}
+
+.shopping_list .product {
+  padding: 40px;
+  border: 1px solid gray;
+  display: flex;
+  justify-content: center;
+}
+
+.buy_shopping_list {
+  background-color: cornflowerblue;
+  width: 400px;
+  height: 100px;
+  font-size: 30px;
+}
