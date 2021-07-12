@@ -36,6 +36,14 @@ function buyproduct(pname) {
   x.innerText = num;
 }
 
+function confirm(pname) {
+  var p_count = document.getElementById("count");
+  buy_count = parseInt(p_count.innerText);
+  // alert(buy_count);
+  // alert(pname);
+  location.href = "mainpage.html";
+}
+
 function getImage(img_name) {
   if (image_name == "avocado") {
     return "media/avocado.jpg";

@@ -93,3 +93,15 @@ h3 {
 #count {
   font-size: 100px;
 }
+
+#logout {
+  font-size: 30px;
+  width: 100px;
+  height: 50px;
+}
+
+#shopping_bag {
+  font-size: 30px;
+  width: 100px;
+  height: 50px;
+}
