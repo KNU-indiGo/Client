@@ -85,3 +85,8 @@ function getImage(img_name) {
     return "media/tomato.jpg";
   }
 }
+
+function removeItem(pname) {
+  const item = document.getElementById(pname);
+  item.remove();
+}
