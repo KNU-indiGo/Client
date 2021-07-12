@@ -1,5 +1,6 @@
 function movetopage(pname) {
-  this.location.href = "product.html";
+  this.location.href = pname + ".html";
+  // alert(pname);
 
   var description = "no description for this product";
 
@@ -7,11 +8,12 @@ function movetopage(pname) {
     description = "Delicious avocado.";
   } else if (pname == "berry_mix") {
     description = "Delicious berry mix.";
+    document.getElementById("description").innerText = description;
   }
 
-  document.getElementById("description").textContent = description;
-  document.getElementById("title").textContent = pname;
-  document.getElementById("pname").textContent = pname;
+  // document.getElementById("description").innerHTML = description;
+  // document.getElementById("title").innerHTML = pname;
+  // document.getElementById("pname").innerHTML = pname;
 }
 
 function check(id, pw) {
@@ -19,10 +21,51 @@ function check(id, pw) {
   var pass = document.getElementById("pass");
 
   if (id.value == "indigo" && pass.value == "password") {
-    this.location.href = "index.html";
+    this.location.href = "mainpage.html";
   } else if (id.value == "indigo2" && pass.value == "password2") {
-    this.location.href = "index.html";
+    this.location.href = "mainpage.html";
   } else {
     this.location.href = "index.html";
+  }
+}
+
+function buyproduct(pname) {
+  var x = document.getElementById("count");
+  let num = x.innerText;
+  num = parseInt(num) + 1;
+  x.innerText = num;
+}
+
+function getImage(img_name) {
+  if (image_name == "avocado") {
+    return "media/avocado.jpg";
+  } else if (image_name == "berry_mix") {
+    return "media/berry_mix.jpg";
+  } else if (image_name == "dragonfruit") {
+    return "media/dragonfruit.jpg";
+  } else if (image_name == "grapefruit") {
+    return "media/grapefruit.jpg";
+  } else if (image_name == "kiwi") {
+    return "media/kiwi.png";
+  } else if (image_name == "lemon") {
+    return "media/lemon.jpg";
+  } else if (image_name == "lime") {
+    return "media/lime.jpg";
+  } else if (image_name == "orange") {
+    return "media/orange.jpg";
+  } else if (image_name == "papaya") {
+    return "media/papaya.png";
+  } else if (image_name == "passionfruit") {
+    return "media/passionfruit.png";
+  } else if (image_name == "pear") {
+    return "media/pear.jpg";
+  } else if (image_name == "raspberry") {
+    return "media/raspberry.jpg";
+  } else if (image_name == "strawberry") {
+    return "media/strawberry.png";
+  } else if (image_name == "tangerin") {
+    return "media/tangerin.jpg";
+  } else if (image_name == "tomato") {
+    return "media/tomato.jpg";
   }
 }
