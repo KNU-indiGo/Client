@@ -98,14 +98,24 @@ h3 {
   font-size: 100px;
 }
 
+ul li {
+  list-style: none;
+  margin: 100px;
+  display: flex;
+}
+
 #logout {
   font-size: 30px;
   width: 100px;
   height: 50px;
+  text-decoration: underline;
+  text-underline-offset: 7 px;
 }
 
 #shopping_bag {
   font-size: 30px;
-  width: 100px;
+  width: 200px;
   height: 50px;
+  text-decoration: underline;
+  text-underline-offset: 7px;
 }

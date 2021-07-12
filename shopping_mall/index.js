@@ -44,6 +44,14 @@ function confirm(pname) {
   location.href = "mainpage.html";
 }
 
+function shoppinglist() {
+  this.location.href = "shoppingbag.html";
+}
+
+function logout() {
+  this.location.href = "login.html";
+}
+
 function getImage(img_name) {
   if (image_name == "avocado") {
     return "media/avocado.jpg";
