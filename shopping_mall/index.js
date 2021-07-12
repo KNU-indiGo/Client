@@ -25,7 +25,7 @@ function check(id, pw) {
   } else if (id.value == "indigo2" && pass.value == "password2") {
     this.location.href = "mainpage.html";
   } else {
-    this.location.href = "index.html";
+    this.location.href = "login.html";
   }
 }
 

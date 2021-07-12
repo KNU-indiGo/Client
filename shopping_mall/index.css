@@ -34,7 +34,7 @@ h4 {
 }
 
 .list {
-  margin-left: 190px;
+  margin-left: 220px;
   display: flex;
   margin-bottom: 30px;
 }
@@ -48,11 +48,14 @@ h4 {
 
 .product {
   margin: 30px;
+  margin-bottom: 20px;
   border-bottom: solid indigo 5px;
 }
 
 .product:hover {
   margin: 30px;
+  margin-bottom: 20px;
+
   border-bottom: solid red 5px;
 }
 
@@ -63,10 +66,30 @@ h4 {
   font-size: 20px;
 }
 
+input {
+  height: 70px;
+  font-size: 70px;
+}
 .container {
+  margin-left: 400px;
   padding-top: 100px;
-  display: inline-block;
+  display: flex;
   font-size: 30px;
+}
+
+#inputform {
+  margin: 10px;
+}
+#idform {
+  margin-bottom: 10px;
+}
+
+#submitbutton {
+  margin-top: 70px;
+  align-content: center;
+  height: 100px;
+  width: 300px;
+  font-size: 60px;
 }
 
 .detail_page {
@@ -121,14 +144,17 @@ ul li {
   font-size: 30px;
   width: 100px;
   height: 50px;
-  text-decoration: underline;
-  text-underline-offset: 7 px;
+  color: red;
+  /* text-decoration: underline; */
+  /* text-underline-offset: 7 px; */
 }
 
 #shopping_bag {
   font-size: 30px;
   width: 200px;
   height: 50px;
-  text-decoration: underline;
-  text-underline-offset: 7px;
+  color: blue;
+
+  /* text-decoration: underline; */
+  /* text-underline-offset: 7px; */
 }

@@ -12,21 +12,38 @@
 
 <body>
     <h1>
-        Indigo Shopping mall login page
+        Login
     </h1>
     <hr>
 
     <div class="container">
-        <label for="uname"><b>Username</b></label>
-        <input id="username" type="text" placeholder="Enter Username" name="uname" required>
+        <div id="inputform">
+            <div id="idform">
+                <label for="uname">
+                    <b>Username</b>
+                </label>
+                <p class="mb_p"></p>
+                <input id="username" type="text" placeholder="Enter Username" name="uname" required>
+            </div>
+            <div id="pswform">
+                <label for="psw">
+                    <b>Password</b>
+                </label>
+                <p class="mb_p"></p>
 
-
-        <label for="psw"><b>Password</b></label>
-        <input id="pass" type="password" placeholder="Enter Password" name="psw" required>
-
-        <button type="submit" onclick=check()>Login</button>
+                <input id="pass" type="password" placeholder="Enter Password" name="psw" required>
+            </div>
+            <button id="submitbutton" type="submit" onclick=check()>Login</button>
+        </div>
     </div>
 
 </body>
+
+<div style="text-align: center;">
+    <br />
+    <b> ID : indigo <br /> PW : password</b>
+</div>
+
+
 
 </html>
