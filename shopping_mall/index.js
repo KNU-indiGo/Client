@@ -98,6 +98,11 @@ function shoppinglist() {
 }
 
 function logout() {
+  var bridge = new WebOSServiceBridge();
+  var url = "luna://com.webos.service.db/delKind";
+  var params = '{"id" : "com.sample.app:1"}';
+
+  bridge.call(url, params);
   this.location.href = "login.html";
 }
 
