@@ -21,13 +21,16 @@ const AppBase = kind({
 	propTypes: {
 		index: PropTypes.number,
 		fire_situation: PropTypes.number,
+		open: PropTypes.bool,
 		onNavigate: PropTypes.func,
-		onSelectFireSituation: PropTypes.func
+		onSelectFireSituation: PropTypes.func,
+		handleOpen: PropTypes.func
 	},
 
 	defaultProps: {
 		index: 0,
-		fire_situation: 0
+		fire_situation: 0,
+		open: false
 	},
 
 	styles: {
@@ -48,21 +51,29 @@ const AppBase = kind({
 					index: 1
 				});
 			}
+		},
+		handleOpen: (ev, {open, handleOpen}) => {
+			if(handleOpen) {
+				handleOpen({
+					open: !open
+				});
+			}
 		}
 	},
 
-	render: ({index, fire_situation, onNavigate, onSelectFireSituation, ...rest}) => (
+	render: ({index, fire_situation, onNavigate, onSelectFireSituation, open, handleOpen, ...rest}) => (
 		<Panels {...rest} index={index} onBack={onNavigate}>
 			<FireList onSelectFireSituation={onSelectFireSituation}>{fire_situations}</FireList>
-			<FireDetail name={fire_situations[fire_situation]} />
+			<FireDetail name={fire_situations[fire_situation]} open={open} handleOpen={handleOpen} />
 		</Panels>
 	)
 });
 
 const App = Changeable({prop: 'index', change: 'onNavigate'},
+	Changeable({prop: 'open', change: 'handleOpen'},
 	Changeable({prop: 'fire_situation', change: 'onSelectFireSituation'},
 		ThemeDecorator(AppBase)
-	)
+	))
 );
 
 export default App;
