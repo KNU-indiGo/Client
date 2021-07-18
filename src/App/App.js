@@ -4,7 +4,7 @@ import Panels from '@enact/sandstone/Panels';
 import PropTypes from 'prop-types';
 import Changeable from '@enact/ui/Changeable';
 
-import FireList from '../views/FireList';
+import Map from '../components/Map';
 import FireDetail from '../views/FireDetail';
 
 import css from './App.module.less';
@@ -63,7 +63,7 @@ const AppBase = kind({
 
 	render: ({index, fire_situation, onNavigate, onSelectFireSituation, open, handleOpen, ...rest}) => (
 		<Panels {...rest} index={index} onBack={onNavigate}>
-			<FireList onSelectFireSituation={onSelectFireSituation}>{fire_situations}</FireList>
+			<Map></Map>
 			<FireDetail name={fire_situations[fire_situation]} open={open} handleOpen={handleOpen} />
 		</Panels>
 	)

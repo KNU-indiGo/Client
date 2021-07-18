@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import GoogleMap from "google-map-react";
+import { Panel, Header } from "@enact/sandstone/Panels";
 
 const Map = () => {
     const [lat, setLat] = useState(35.8856424);
@@ -50,16 +51,21 @@ const Map = () => {
     };
     
     return (
-        <div className="map">
-            <GoogleMap 
-                bootstrapURLKeys = {{ key: process.env.REACT_APP_GOOGLE_API_KEY, libraries: 'places' }}
-                style={mapStyles}
-                defaultZoom={15}
-                defaultCenter={{ lat: lat, lng: lng }}
-                onGoogleApiLoaded={({ map, maps }) => renderMarkers(map, maps)}
-            >
-            </GoogleMap>
-        </div>
+        <Panel>
+            <Header
+            title="Smart Fire Detection System"
+            subtitle="Daegu Buk-gu Fire Station" />
+            <div className="map">
+                <GoogleMap 
+                    bootstrapURLKeys = {{ key: 'AIzaSyAX0U6fBgIYro-7l8_xJWpAoi0PqbnmgEM', libraries: 'places' }}
+                    style={mapStyles}
+                    defaultZoom={15}
+                    defaultCenter={{ lat: lat, lng: lng }}
+                    onGoogleApiLoaded={({ map, maps }) => renderMarkers(map, maps)}
+                >
+                </GoogleMap>
+            </div>
+        </Panel>
     );
 };
 
