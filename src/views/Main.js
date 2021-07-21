@@ -1,5 +1,5 @@
 import kind from '@enact/core/kind';
-import { Header, Panel } from '@enact/sandstone/Panels';
+import Panels, { Header, Panel } from '@enact/sandstone/Panels';
 import ThemeDecorator from '@enact/sandstone/ThemeDecorator';
 import PropTypes from 'prop-types';
 
