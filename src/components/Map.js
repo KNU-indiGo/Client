@@ -37,8 +37,10 @@ class Map extends React.Component {
                                         <Link 
                                         to={{
                                             pathname: `/camlist/${place.id}`,
-                                            name: place.name,
-                                            addr: place.address
+                                            state: {
+                                                name: place.name,
+                                                addr: place.address
+                                            }
                                         }}
                                         style={{ textDecoration: 'none' }}>
                                             <div style={{ background: 'white', color: 'black', padding: 5, borderRadius: 20, alignItems: 'center' }}>

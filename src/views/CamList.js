@@ -10,7 +10,9 @@ const CamList = kind({
 
     render: (props) => (
         <Panel {...props} style={{background: 'white', color: 'black'}}>
-            <Header title={props.name} />
+            <Header 
+            title={props.location.state.name} 
+            subtitle={props.location.state.addr}/>
             <Scroller>
                 <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', textAlign: 'center' }}>
                 {cams.map((cam, key) => {
