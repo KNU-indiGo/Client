@@ -1,0 +1,2 @@
+export const SET_PEOPLE = "SET_PEOPLE";
+export const SET_TEMPERATURE = "SET_TEMPERATURE";

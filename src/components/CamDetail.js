@@ -1,6 +1,5 @@
 import React from 'react';
 import Popup from '@enact/sandstone/Popup';
-import Button from '@enact/sandstone/Button';
 
 class CamDetail extends React.Component {
     constructor(props) {
