@@ -28,22 +28,19 @@ class CamDetail extends React.Component {
         return (
           <div
             {...props}
-            style={{ padding: "20px" }}
-            onClick={() => {
-              this.openPopup();
-            }}>
+            style={{ padding: "20px" }}>
             <img
               src="https://image.flaticon.com/icons/png/512/1160/1160041.png"
               alt="cam_detail"
-              style={{ width: "200px", height: "200px" }}/>
+              style={{ width: "200px", height: "200px" }}
+              onClick={() => { this.openPopup(); }}
+              />
             <div>{this.props.name}</div>
             <Popup
               open={this.state.open}
               position="center"
               spotlightRestrict="self-first"
-              onClose={() => {
-                this.closePopup();
-              }}
+              onClose={() => { this.closePopup(); }}
               style={{ height: "800px", width: "800px", display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <h1 style={{ color: "white" }}>
                     {this.props.name}
@@ -65,7 +62,9 @@ class CamDetail extends React.Component {
                     width: "200px",
                     margin: "10px",
                     textAlign: "center"
-                    }}>
+                    }}
+                    onClick={() => {this.closePopup();} }
+                    >
                         Complete
                     </div>
                     <div
@@ -78,7 +77,7 @@ class CamDetail extends React.Component {
                     margin: "10px",
                     textAlign: "center"
                     }}
-                    onClick={()=> this.closePopup()}>
+                    onClick={()=> {this.closePopup();} }>
                         Close
                     </div>
                 </div>

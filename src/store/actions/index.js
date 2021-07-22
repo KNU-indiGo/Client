@@ -1,4 +1,3 @@
-import Panels from '@enact/sandstone/Panels';
 import * as types from './actionTypes';
 
 export function setPeople() {

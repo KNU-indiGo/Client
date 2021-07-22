@@ -1,7 +1,7 @@
 import * as types from '../actions/actionTypes';
 
 const initialState = {
-    people: 0,
+    people: 5,
     temperature: 28
 }
 
