@@ -11,21 +11,10 @@ const Main = kind({
 
     render: () => (
         <Panel>
-            <Row style={{ height: '100%' }}>
-                <Cell>
-                    <Column>
-                        <Cell component="header">
-                            <TopNav
-                                title='Smart Fire Detection System'
-                                subtitle='Deagu Northern Fire Station'>
-                            </TopNav>
-                        </Cell>
-                        <Cell size="80%">
-                            <Map></Map>
-                        </Cell>
-                    </Column>
-                </Cell>
-            </Row>
+            <TopNav
+            title='Smart Fire Detection System'
+            subtitle='Deagu Northern Fire Station' />
+            <Map></Map>
         </Panel>
     )
 });
