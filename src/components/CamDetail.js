@@ -16,7 +16,7 @@ class CamDetail extends React.Component {
         });
         console.log('open popup');
     }
-
+    
     closePopup() {
         this.setState({
             open: false
