@@ -5,6 +5,7 @@ import Main from '../views/Main';
 import CamList from '../views/CamList';
 import Statistics from '../views/Statistics';
 import CompleteList from '../views/CompleteList';
+import OngoingList from '../views/OngoingList';
 
 export default function App() {
 	return(
@@ -14,6 +15,7 @@ export default function App() {
 				<Route exact path="/camlist/:id" component={CamList} />
 				<Route exact path="/statistics" component={Statistics} />
 				<Route exact path="/completedlist" component={CompleteList} />
+				<Route exact path="/ongoinglist" component={OngoingList} />
 			</Switch>
 		</BrowserRouter>
 	)

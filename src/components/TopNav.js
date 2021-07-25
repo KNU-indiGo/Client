@@ -1,10 +1,8 @@
 import React from 'react';
 import { Row, Cell } from '@enact/ui/Layout';
 import * as FaIcons from 'react-icons/fa';
-import { Header } from '@enact/sandstone/Panels';
 import PopupTapLayout, { Tab, TabPanel, TabPanels } from '@enact/sandstone/PopupTabLayout';
 import Item from '@enact/sandstone/Item';
-import { Link } from 'react-router-dom';
 
 class TopNav extends React.Component {
     constructor(props) {
@@ -69,10 +67,10 @@ class TopNav extends React.Component {
 				            <TabPanel style={{ color: "white"}}>
 					            <Item 
                                 onClick={() => {window.location.href="/ongoinglist"}}
-                                style={{ marginTop: "1rem" }}>Ongoing Progress</Item>
+                                style={{ marginTop: "1rem" }}>Ongoing List</Item>
 					            <Item 
                                 onClick={() => {window.location.href="/completedlist"}}
-                                style={{ marginTop: "1rem" }}>Completed list</Item>
+                                style={{ marginTop: "1rem" }}>Completed List</Item>
 				            </TabPanel>
 			            </TabPanels>
 		            </Tab>
