@@ -1,5 +1,5 @@
 import kind from '@enact/core/kind';
-import { Header, Panel } from '@enact/sandstone/Panels';
+import { Panel } from '@enact/sandstone/Panels';
 import ThemeDecorator from '@enact/sandstone/ThemeDecorator';
 import { Row, Column, Cell } from '@enact/ui/Layout';
 
