@@ -1,9 +1,10 @@
 import kind from '@enact/core/kind';
-import { Header, Panel } from '@enact/sandstone/Panels';
+import { Panel } from '@enact/sandstone/Panels';
 import Scroller from '@enact/sandstone/Scroller';
 import ThemeDecorator from '@enact/sandstone/ThemeDecorator';
 import { Link } from 'react-router-dom';
 
+import TopNav from '../components/TopNav';
 import CamDetail from '../components/CamDetail';
 
 const CamList = kind({
@@ -11,9 +12,9 @@ const CamList = kind({
 
     render: (props) => (
         <Panel {...props} style={{background: 'white', color: 'black'}}>
-            <Header 
+            <TopNav 
             title={props.location.state.name} 
-            subtitle={props.location.state.addr}/>
+            subtitle={props.location.state.addr} />
             <Scroller>
               <div style={{ display: "flex", justifyContent: "space-around", alignItems: "center", textAlign: "center" }}>
                 {cams.map((cam, key) => {

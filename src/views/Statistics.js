@@ -1,13 +1,15 @@
 import kind from '@enact/core/kind';
-import Panels, { Header, Panel } from '@enact/sandstone/Panels';
+import { Panel } from '@enact/sandstone/Panels';
 import ThemeDecorator from '@enact/sandstone/ThemeDecorator';
+
+import TopNav from '../components/TopNav';
 
 const Statistics = kind({
     name: 'statistics',
 
     render: () => (
         <Panel style={{backgroud: 'white', color: 'black'}}>
-            <Header
+            <TopNav
             title="Statistics" />
             <div>
                 statistics img here!

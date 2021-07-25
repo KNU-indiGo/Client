@@ -4,6 +4,7 @@ import Scroller from '@enact/sandstone/Scroller';
 import ThemeDecorator from '@enact/sandstone/ThemeDecorator';
 import { Link } from 'react-router-dom';
 
+import TopNav from '../components/TopNav';
 import CompleteDetail from '../components/CompleteDetail';
 
 const CompleteList = kind({
@@ -11,9 +12,9 @@ const CompleteList = kind({
 
     render: (props) => (
         <Panel {...props} style={{background: 'white', color: 'black'}}>
-            <Header 
-            title="Complete List"/>
             <Scroller>
+            <TopNav
+            title="Complete List"/>
               <div style={{ justifyContent: "space-around", alignItems: "center", textAlign: "center" }}>
                 {locations.map((place, key) => {
                   return <CompleteDetail key={key} name={place.name} address={place.address} lat={place.lat} lng={place.lng}></CompleteDetail>;
