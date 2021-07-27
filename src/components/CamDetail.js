@@ -1,5 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Popup from '@enact/sandstone/Popup';
+
+import { changeStatusComplete } from '../store/actions/index';
 
 class CamDetail extends React.Component {
     constructor(props) {
@@ -28,7 +31,7 @@ class CamDetail extends React.Component {
         return (
           <div
             {...props}
-            style={{ padding: "20px" }}>
+            style={{ padding: "20px", color: "black" }}>
             <img
               src="https://image.flaticon.com/icons/png/512/1160/1160041.png"
               alt="cam_detail"
@@ -55,20 +58,6 @@ class CamDetail extends React.Component {
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <div
                     style={{
-                    background: "green",
-                    color: "white",
-                    padding: "20px",
-                    borderRadius: "20px",
-                    width: "200px",
-                    margin: "10px",
-                    textAlign: "center"
-                    }}
-                    onClick={() => {this.closePopup();} }
-                    >
-                        Complete
-                    </div>
-                    <div
-                    style={{
                     background: "red",
                     color: "white",
                     padding: "20px",
@@ -87,4 +76,12 @@ class CamDetail extends React.Component {
     }
 }
 
-export default CamDetail;
+const mapStateToProps = state => ({
+    current: state.set.current,
+});
+
+const mapDispatchToProps = dispatch => ({
+    changeStatusComplete: current => dispatch(changeStatusComplete(current)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(CamDetail);

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 import TopNav from '../components/TopNav';
 import CamDetail from '../components/CamDetail';
+import CompleteButton from '../components/CompleteButton';
 
 const CamList = kind({
     name: 'cam_list',
@@ -18,7 +19,7 @@ const CamList = kind({
             <Scroller>
               <div style={{ display: "flex", justifyContent: "space-around", alignItems: "center", textAlign: "center" }}>
                 {cams.map((cam, key) => {
-                  return <CamDetail key={key} name={cam.name}></CamDetail>;
+                  return <CamDetail key={key} id={cam.id} name={cam.name}></CamDetail>;
                 })}
               </div>
               <Link to="/" style={{ textDecoration: "none", margin: "20px" }}>
@@ -33,6 +34,7 @@ const CamList = kind({
                   go back
                 </div>
               </Link>
+              <CompleteButton />
             </Scroller>
         </Panel>
     )

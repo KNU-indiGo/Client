@@ -15,7 +15,7 @@ const CompleteList = kind({
             <Scroller>
             <TopNav
             title="Complete List"/>
-              <div style={{ justifyContent: "space-around", alignItems: "center", textAlign: "center" }}>
+              <div style={{ justifyContent: "space-around", alignItems: "center", textAlign: "center", color: "black"}}>
                 {locations.map((place, key) => {
                   return <CompleteDetail key={key} name={place.name} address={place.address} lat={place.lat} lng={place.lng}></CompleteDetail>;
                 })}

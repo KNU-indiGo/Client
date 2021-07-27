@@ -28,7 +28,7 @@ class TopNav extends React.Component {
 
     render(props) {
         return (
-            <div>
+            <div style={{ color: 'black' }}>
                 <Row>
                     <Cell component="header">
                         <h2 style={{ fontSize: '50px' }}>{this.props.title}</h2>

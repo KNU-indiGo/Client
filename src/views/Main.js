@@ -1,7 +1,6 @@
 import kind from '@enact/core/kind';
 import { Panel } from '@enact/sandstone/Panels';
 import ThemeDecorator from '@enact/sandstone/ThemeDecorator';
-import { Row, Column, Cell } from '@enact/ui/Layout';
 
 import Map from '../components/Map';
 import TopNav from '../components/TopNav';
