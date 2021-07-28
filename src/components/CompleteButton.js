@@ -2,15 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
-import { changeStatusComplete } from '../store/actions/index';
-
 class CompleteButton extends React.Component {
     
 
     handleComplete = index => {
-        const { changeStatusComplete } = this.props;
         console.log(index);
-        changeStatusComplete(index);
         axios({
             url: "/api/fire/put-out/" + index,
             method: 'PUT'
@@ -36,14 +32,10 @@ class CompleteButton extends React.Component {
             </div>
         );
     }
-} 
+}
 
 const mapStateToProps = state => ({
     current: state.set.current,
 });
 
-const mapDispatchToProps = dispatch => ({
-    changeStatusComplete: current => dispatch(changeStatusComplete(current)),
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(CompleteButton);
+export default connect(mapStateToProps)(CompleteButton);
