@@ -1,8 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Popup from '@enact/sandstone/Popup';
+import { w3cwebsocket as W3CWebSocket } from 'websocket';
 
 import { changeStatusComplete } from '../store/actions/index';
+
+const client = new W3CWebSocket('ws://210.204.38.60:8080/ws');
 
 class CamDetail extends React.Component {
     constructor(props) {
@@ -11,6 +14,26 @@ class CamDetail extends React.Component {
             open: false,
             people: 0
         };
+    }
+    componentDidMount() {
+        client.onopen = () => {
+            console.log('WebSocket Client Connected');
+        };
+
+        client.onmessage = (message) => {
+            const dataFromServer = JSON.parse(message.data);
+            this.setState({people: dataFromServer});
+        }
+    }
+    componentDidUpdate() {
+        client.onopen = () => {
+            console.log('WebSocket Client Connected');
+        };
+
+        client.onmessage = (message) => {
+            const dataFromServer = JSON.parse(message.data);
+            this.setState({people: dataFromServer});
+        }
     }
 
     openPopup() {

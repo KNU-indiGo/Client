@@ -1,13 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
 import { changeStatusComplete } from '../store/actions/index';
 
 class CompleteButton extends React.Component {
+    
+
     handleComplete = index => {
         const { changeStatusComplete } = this.props;
         console.log(index);
         changeStatusComplete(index);
+        axios({
+            url: "/api/fire/contain/" + index,
+            method: 'PUT'
+        }).then((res) => {
+        });
     }
 
     render() {

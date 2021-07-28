@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { GoogleMap, InfoWindow, LoadScript, Marker } from '@react-google-maps/api';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 import { setCurrentPlace } from '../store/actions/index';
 
@@ -9,8 +10,26 @@ class Map extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            selected: 0
+            selected: 0,
+            places: []
         };
+    }
+    componentDidMount() {
+        axios({
+            url: "/api/fire/list",
+            method: 'GET'
+        }).then((res) => {
+            console.log(res.data);
+            this.setState({places: res.data});
+        });
+    }
+    componentDidUpdate() {
+        axios({
+            url: "/api/fire/list",
+            method: 'GET'
+        }).then((res) => {
+            this.setState({places: res.data});
+        });
     }
 
     onClickMarker(id) {
@@ -31,9 +50,9 @@ class Map extends React.Component {
                 mapContainerStyle={mapStyle}
                 zoom={15}
                 center={{lat: defaultLocation.lat, lng: defaultLocation.lng}} >
-                    {places.map((place, key) => {
-                        if (place.control == 0) var url = "http://maps.google.com/mapfiles/ms/micons/green.png";
-                        else if (place.control == 1) url = "http://maps.google.com/mapfiles/ms/micons/orange.png";
+                    {this.state.places.map((place, key) => {
+                        if (place.status === "SAFE" || place.status === "PUTOUT") var url = "http://maps.google.com/mapfiles/ms/micons/green.png";
+                        else if (place.status === "CONTAIN") url = "http://maps.google.com/mapfiles/ms/micons/orange.png";
                         else url = "http://maps.google.com/mapfiles/ms/micons/red.png";
                         return (
                             <Marker
@@ -41,22 +60,22 @@ class Map extends React.Component {
                             icon={{
                                 url: url
                             }}
-                            position={{ lat: place.lat, lng: place.lng, }}
+                            position={{ lat: Number(place.latitude), lng: Number(place.longitude), }}
                             onClick={() => {this.onClickMarker(place.id)}} >
                                 { this.state.selected === place.id && (
                                     <InfoWindow
-                                    position={{lat: place.lat, lng: place.lng}} >
+                                    position={{lat: Number(place.latitude), lng: Number(place.longitude)}} >
                                         <Link 
                                         to={{
                                             pathname: `/camlist/${place.id}`,
                                             state: {
-                                                name: place.name,
+                                                name: place.building_name,
                                                 addr: place.address
                                             }
                                         }}
                                         style={{ textDecoration: 'none' }}>
                                             <div style={{ background: 'white', color: 'black', padding: 5, borderRadius: 20, alignItems: 'center' }}>
-                                                <h2>{place.name}</h2>
+                                                <h2>{place.building_name}</h2>
                                                 {place.address}
                                             </div>
                                         </Link>
