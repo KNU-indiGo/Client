@@ -2,17 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
-import { changeStatusComplete } from '../store/actions/index';
-
-class CompleteButton extends React.Component {
+class OngoingButton extends React.Component {
     
-
     handleComplete = index => {
-        const { changeStatusComplete } = this.props;
         console.log(index);
-        changeStatusComplete(index);
         axios({
-            url: "/api/fire/put-out/" + index,
+            url: "/api/fire/contain/" + index,
             method: 'PUT'
         }).then((res) => {
         });
@@ -23,7 +18,7 @@ class CompleteButton extends React.Component {
         return (
             <div
             style={{
-                background: "green",
+                background: "orange",
                 color: "white",
                 padding: "20px",
                 borderRadius: "20px",
@@ -32,7 +27,7 @@ class CompleteButton extends React.Component {
                 textAlign: "center"
             }}
             onClick={() => {this.handleComplete(current);} }>
-                Complete
+                진압 중
             </div>
         );
     }
@@ -42,8 +37,4 @@ const mapStateToProps = state => ({
     current: state.set.current,
 });
 
-const mapDispatchToProps = dispatch => ({
-    changeStatusComplete: current => dispatch(changeStatusComplete(current)),
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(CompleteButton);
+export default connect(mapStateToProps)(OngoingButton);

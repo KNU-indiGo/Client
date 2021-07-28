@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 import TopNav from '../components/TopNav';
 import CamDetail from '../components/CamDetail';
+import OngoingButton from '../components/OngoingButton';
 import CompleteButton from '../components/CompleteButton';
 
 const CamList = kind({
@@ -34,6 +35,7 @@ const CamList = kind({
                   go back
                 </div>
               </Link>
+              <OngoingButton />
               <CompleteButton />
             </Scroller>
         </Panel>
