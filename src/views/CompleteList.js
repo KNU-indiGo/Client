@@ -7,6 +7,7 @@ import axios from 'axios';
 
 import TopNav from '../components/nav/TopNav';
 import CompleteDetail from '../components/detail/CompleteDetail';
+import BottomNav from '../components/nav/BottomNav';
 
 class CompleteList extends React.Component {
   constructor(props) {
@@ -55,6 +56,7 @@ class CompleteList extends React.Component {
                   go back
                 </div>
               </Link>
+              <BottomNav />
             </Scroller>
         </Panel>
       )

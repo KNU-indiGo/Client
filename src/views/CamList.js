@@ -10,6 +10,7 @@ import OngoingButton from '../components/button/OngoingButton';
 import CompleteButton from '../components/button/CompleteButton';
 import StatisticsButton from '../components/button/StatisticsButton';
 import GoBackButton from '../components/button/GoBackButton';
+import BottomNav from '../components/nav/BottomNav';
 
 const cams = [
   {id: 1, name: "cam1"},
@@ -59,11 +60,12 @@ class CamList extends React.Component{
                   return <CamDetail key={key} id={cam.id} name={cam.name}></CamDetail>;
                 })}
               </div>
-                <GoBackButton />
+              <GoBackButton />
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
                 <StatisticsButton id={this.state.place.id}/>
                   {(this.state.place.status === "BREAKOUT") ? <OngoingButton/> : ((this.state.place.status === "CONTAIN") ? <CompleteButton/> : "")}
               </div>
+              <BottomNav/>
               </Scroller>
         </Panel>
     )

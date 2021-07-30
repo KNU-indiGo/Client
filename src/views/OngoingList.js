@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 
 import TopNav from '../components/nav/TopNav';
 import OngoingDetail from '../components/detail/OngoingDetail';
+import BottomNav from '../components/nav/BottomNav';
 
 class OngoingList extends React.Component {
     constructor(props) {
@@ -67,6 +68,7 @@ class OngoingList extends React.Component {
                             go back
                         </div>
                     </Link>
+                    <BottomNav />
                 </Scroller>
             </Panel>
         )
