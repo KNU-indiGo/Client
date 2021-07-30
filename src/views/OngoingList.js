@@ -1,4 +1,3 @@
-import kind from '@enact/core/kind';
 import { Panel } from '@enact/sandstone/Panels';
 import Scroller from '@enact/sandstone/Scroller';
 import ThemeDecorator from '@enact/sandstone/ThemeDecorator';
@@ -39,10 +38,21 @@ class OngoingList extends React.Component {
                 <Scroller>
                     <TopNav
                         title="Ongoing List" />
-                    <div>ongoing list</div>
                     <div style={{ justifyContent: "space-around", alignItems: "center", textAlign: "center", color: "black" }}>
                         {this.state.locations.map((place, key) => {
-                            return <OngoingDetail key={key} id={place.id} name={place.building_name} address={place.address} lat={Number(place.latitude)} lng={Number(place.longitude)}></OngoingDetail>;
+                            return (
+                                <Link 
+                                to={{
+                                    pathname: `/camlist/${place.id}`,
+                                    state: {
+                                        name: place.building_name,
+                                        addr: place.address
+                                    }
+                                }}
+                                style={{ textDecoration: 'none' }}>
+                                    <OngoingDetail key={key} id={place.id} name={place.building_name} address={place.address} lat={Number(place.latitude)} lng={Number(place.longitude)}></OngoingDetail>
+                                </Link>
+                            )
                         })}
                     </div>
                     <Link to="/" style={{ textDecoration: "none", margin: "20px" }}>

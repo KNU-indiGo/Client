@@ -31,26 +31,13 @@ class OngoingDetail extends React.Component {
         return (
           <div
             style={{ padding: "20px" }}>
-            <div style={{display: "flex"}} onClick={() => { 
-                console.log(this.props.id);
-                <Link 
-                to={{
-                    pathname: `/camlist/${this.props.id}`,
-                        state: {
-                            name: this.props.name,
-                            addr: this.props.address
-                        }
-                    }}
-                    style={{ textDecoration: 'none' }}>
-                </Link>
-             }}>
+            <div style={{display: "flex"}}>
                 <MapOnce lat={this.props.lat} lng={this.props.lng} ></MapOnce>
                 <div>
                     <p>{this.props.name}</p>
                     <p>{this.props.address}</p>
                 </div>
             </div>
-            
           </div>
         );
     }

@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import TopNav from '../components/TopNav';
 import StatisticsDetail from '../components/StatisticsDetail';
 import Scroller from '@enact/ui/Scroller';
+import BottomNav from '../components/BottomNav';
 
 class Statistics extends React.Component {
     constructor(props) {
@@ -54,6 +55,7 @@ class Statistics extends React.Component {
                         )
                     })}
                 </div>
+            <BottomNav />
             </Scroller>
             </Panel>
         )
