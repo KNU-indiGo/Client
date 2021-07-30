@@ -4,7 +4,7 @@ import { GoogleMap, InfoWindow, LoadScript, Marker } from '@react-google-maps/ap
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-import { setCurrentPlace } from '../store/actions/index';
+import { setCurrentPlace } from '../../store/actions/index';
 
 class Map extends React.Component {
     constructor(props) {
@@ -69,6 +69,7 @@ class Map extends React.Component {
                                         to={{
                                             pathname: `/camlist/${place.id}`,
                                             state: {
+                                                id: place.id,
                                                 name: place.building_name,
                                                 addr: place.address
                                             }

@@ -46,14 +46,18 @@ class TopNav extends React.Component {
                 open={this.state.sidebar}
                 onClose={() => {this.closeSidebar()}}
                 >
-                    <Tab title="Home">
+                    <Tab 
+                    icon='home'
+                    title="Home">
                         <TabPanels>
                             <TabPanel style={{ color: "white"}}>
                                 <Item onClick={() => {window.location.href="/"}} style={{marginTop:"1rem"}}>Go to Home</Item>
                             </TabPanel>
                         </TabPanels>
                     </Tab>
-                    <Tab title="Statistics">
+                    <Tab
+                    icon='nowplaying'
+                    title="Statistics">
                         <TabPanels>
                             <TabPanel style={{ color: "white"}}>
                                 <Item 
@@ -62,7 +66,9 @@ class TopNav extends React.Component {
                             </TabPanel>
                         </TabPanels>
                     </Tab>
-                    <Tab title="Fire Control">
+                    <Tab 
+                    icon='channel'
+                    title="Fire Control">
                         <TabPanels>
 				            <TabPanel style={{ color: "white"}}>
 					            <Item 

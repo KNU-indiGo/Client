@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Popup from '@enact/sandstone/Popup';
 import { w3cwebsocket as W3CWebSocket } from 'websocket';
 
-import { changeStatusComplete } from '../store/actions/index';
+import { changeStatusComplete } from '../../store/actions/index';
 
 const client = new W3CWebSocket('ws://210.204.38.60:8080/ws');
 

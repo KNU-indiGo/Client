@@ -1,7 +1,7 @@
 import React from 'react';
 import Popup from '@enact/sandstone/Popup';
 
-import MapOnce from './MapOnce';
+import MapOnce from '../map/MapOnce';
 
 class CompleteDetail extends React.Component {
     constructor(props) {

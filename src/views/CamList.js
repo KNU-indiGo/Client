@@ -1,14 +1,15 @@
+import React from 'react';
 import { Panel } from '@enact/sandstone/Panels';
 import Scroller from '@enact/sandstone/Scroller';
 import ThemeDecorator from '@enact/sandstone/ThemeDecorator';
-import { Link } from 'react-router-dom';
-import React from 'react';
 import axios from 'axios';
 
-import TopNav from '../components/TopNav';
-import CamDetail from '../components/CamDetail';
-import OngoingButton from '../components/OngoingButton';
-import CompleteButton from '../components/CompleteButton';
+import TopNav from '../components/nav/TopNav';
+import CamDetail from '../components/detail/CamDetail';
+import OngoingButton from '../components/button/OngoingButton';
+import CompleteButton from '../components/button/CompleteButton';
+import StatisticsButton from '../components/button/StatisticsButton';
+import GoBackButton from '../components/button/GoBackButton';
 
 const cams = [
   {id: 1, name: "cam1"},
@@ -58,20 +59,12 @@ class CamList extends React.Component{
                   return <CamDetail key={key} id={cam.id} name={cam.name}></CamDetail>;
                 })}
               </div>
-              <Link to="/" style={{ textDecoration: "none", margin: "20px" }}>
-                <div
-                  style={{
-                    background: "green",
-                    color: "white",
-                    padding: "20px",
-                    borderRadius: "20px",
-                    width: "100px",
-                  }}>
-                  go back
-                </div>
-              </Link>
-              {(this.state.place.status === "BREAKOUT") ? <OngoingButton/> : ((this.state.place.status === "CONTAIN") ? <CompleteButton/> : "")}
-            </Scroller>
+                <GoBackButton />
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+                <StatisticsButton id={this.state.place.id}/>
+                  {(this.state.place.status === "BREAKOUT") ? <OngoingButton/> : ((this.state.place.status === "CONTAIN") ? <CompleteButton/> : "")}
+              </div>
+              </Scroller>
         </Panel>
     )
 }

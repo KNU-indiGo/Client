@@ -4,10 +4,10 @@ import ThemeDecorator from '@enact/sandstone/ThemeDecorator';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-import TopNav from '../components/TopNav';
-import StatisticsDetail from '../components/StatisticsDetail';
+import TopNav from '../components/nav/TopNav';
+import StatisticsDetail from '../components/detail/StatisticsDetail';
 import Scroller from '@enact/ui/Scroller';
-import BottomNav from '../components/BottomNav';
+import BottomNav from '../components/nav/BottomNav';
 
 class Statistics extends React.Component {
     constructor(props) {

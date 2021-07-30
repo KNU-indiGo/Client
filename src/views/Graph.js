@@ -2,7 +2,7 @@ import { Panel } from '@enact/sandstone/Panels';
 import ThemeDecorator from '@enact/sandstone/ThemeDecorator';
 import React from 'react';
 
-import TopNav from '../components/TopNav';
+import TopNav from '../components/nav/TopNav';
 
 class Graph extends React.Component {
   

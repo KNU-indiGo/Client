@@ -5,8 +5,8 @@ import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-import TopNav from '../components/TopNav';
-import OngoingDetail from '../components/OngoingDetail';
+import TopNav from '../components/nav/TopNav';
+import OngoingDetail from '../components/detail/OngoingDetail';
 
 class OngoingList extends React.Component {
     constructor(props) {

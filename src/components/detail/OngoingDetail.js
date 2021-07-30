@@ -1,8 +1,6 @@
 import React from 'react';
-import Popup from '@enact/sandstone/Popup';
-import { Link } from 'react-router-dom';
 
-import MapOnce from './MapOnce';
+import MapOnce from '../map/MapOnce';
 
 class OngoingDetail extends React.Component {
     constructor(props) {

@@ -1,12 +1,12 @@
+import React from 'react';
 import { Panel } from '@enact/sandstone/Panels';
 import Scroller from '@enact/sandstone/Scroller';
 import ThemeDecorator from '@enact/sandstone/ThemeDecorator';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
-import TopNav from '../components/TopNav';
-import CompleteDetail from '../components/CompleteDetail';
-import React from 'react';
+import TopNav from '../components/nav/TopNav';
+import CompleteDetail from '../components/detail/CompleteDetail';
 
 class CompleteList extends React.Component {
   constructor(props) {
