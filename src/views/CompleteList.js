@@ -17,7 +17,7 @@ class CompleteList extends React.Component {
 }
     componentDidMount() {
         axios({
-            url: "/api/fire/list/putout",
+            url: "/api/fire/list/put-out",
             method: 'GET'
         }).then((res) => {
             console.log(res.data);
@@ -26,7 +26,7 @@ class CompleteList extends React.Component {
     }
     componentDidUpdate() {
         axios({
-            url: "/api/fire/list/putout",
+            url: "/api/fire/list/put-out",
             method: 'GET'
         }).then((res) => {
             this.setState({locations: res.data});
