@@ -72,6 +72,4 @@ class CamList extends React.Component{
 }
 }
 
-
-
 export default ThemeDecorator(CamList);

@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class StatisticsButton extends React.Component {
-    render(props) {
-        return (
+const StatisticsButton = (props) => {
+    return (
             <Link {...props}
-            to={{ pathname: `/statistics/${this.props.id}` }}
+            to={{ pathname: `/statistics/${props.id}` }}
             style={{ textDecoration: "none" }}>
                 <div
                 style={{
@@ -21,7 +20,6 @@ class StatisticsButton extends React.Component {
                 </div>
             </Link>
         );
-    }
 } 
 
 export default StatisticsButton;

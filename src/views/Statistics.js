@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Panel } from '@enact/sandstone/Panels';
 import ThemeDecorator from '@enact/sandstone/ThemeDecorator';
 import axios from 'axios';
@@ -9,40 +9,25 @@ import StatisticsDetail from '../components/detail/StatisticsDetail';
 import Scroller from '@enact/ui/Scroller';
 import BottomNav from '../components/nav/BottomNav';
 
-class Statistics extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            buildings: [],
-        };
-    }
+const Statistics = () => {
+    const [places, setPlaces] = useState([])
 
-    componentDidMount() {
+    useEffect(() => {
         axios({
             url: "http://ec2-52-78-90-230.ap-northeast-2.compute.amazonaws.com:8080/api/fire/list",
             method: 'GET'
         }).then((res) => {
-            this.setState({buildings: res.data});
+            setPlaces(res.data);
         });
-    }
+    })
 
-    componentDidUpdate() {
-        axios({
-            url: "http://ec2-52-78-90-230.ap-northeast-2.compute.amazonaws.com:8080/api/fire/list",
-            method: 'GET'
-        }).then((res) => {
-            this.setState({buildings: res.data});
-        });
-    }
-
-    render() {
-        return (
+    return (
             <Panel style={{background: 'white', color: 'black'}}>
             <TopNav
                 title="Statistics" />
             <Scroller>
                 <div style={{ display:"flex", justifyContent: "space-around", flexDirection:"row", alignItems: "center", textAlign: "center", color: "black", flexFlow: "wrap"  }}>
-                    {this.state.buildings.map((place, key) => {
+                    {places.map((place, key) => {
                         return (
                         <Link 
                         to={{pathname:`/statistics/${place.id}`}}
@@ -59,7 +44,6 @@ class Statistics extends React.Component {
             </Scroller>
             </Panel>
         )
-    }
 }
 
 export default ThemeDecorator(Statistics);

@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
-class CompleteButton extends React.Component {
+const CompleteButton = (props) => {
+    const [current, setCurrent] = useState(props.current)
     
-
-    handleComplete = index => {
+    const handleComplete = (index) => {
         console.log(index);
         axios({
             url: "http://ec2-52-78-90-230.ap-northeast-2.compute.amazonaws.com:8080/api/fire/put-out/" + index,
@@ -14,9 +14,7 @@ class CompleteButton extends React.Component {
         });
     }
 
-    render() {
-        const { current } = this.props;
-        return (
+    return (
             <div
             style={{
                 background: "green",
@@ -27,11 +25,10 @@ class CompleteButton extends React.Component {
                 margin: "10px",
                 textAlign: "center"
             }}
-            onClick={() => {this.handleComplete(current);} }>
+            onClick={() => {handleComplete(current);} }>
                 Complete
             </div>
         );
-    }
 }
 
 const mapStateToProps = state => ({

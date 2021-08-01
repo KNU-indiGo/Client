@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class GoBackButton extends React.Component {
-    render() {
-        return (
+const GoBackButton = () => {
+    return (
             <Link
             to='/'
             style={{ textDecoration: "none", margin: "20px" }}>
@@ -21,7 +20,6 @@ class GoBackButton extends React.Component {
                 </div>
             </Link>
         );
-    }
 } 
 
 export default GoBackButton;

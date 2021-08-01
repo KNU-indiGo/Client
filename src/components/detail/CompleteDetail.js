@@ -1,52 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Popup from '@enact/sandstone/Popup';
 
 import MapOnce from '../map/MapOnce';
 
-class CompleteDetail extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            open: false
-        };
+const CompleteDetail = (props) => {
+    const [open, setOpen] = useState(false);
+
+    const openPopup = () => {
+        setOpen(true);
+        console.log("open popup");
     }
 
-    openPopup() {
-        this.setState({
-            open: true
-        });
-        console.log('open popup');
+    const closePopup = () => {
+        setOpen(false);
+        console.log("close popup");
     }
-
-    closePopup() {
-        this.setState({
-            open: false
-        });
-        console.log('close popup');
-    }
-
-    render(props) {
-        return (
+    
+    return (
           <div
             {...props}
             style={{ padding: "20px" }}>
-            <div style={{display: "flex"}} onClick={() => { this.openPopup(); }}>
-                <MapOnce lat={this.props.lat} lng={this.props.lng} ></MapOnce>
+            <div style={{display: "flex"}} onClick={() => { openPopup(); }}>
+                <MapOnce lat={props.lat} lng={props.lng} ></MapOnce>
                 <div>
-                    <p>{this.props.name}</p>
-                    <p>{this.props.address}</p>
+                    <p>{props.name}</p>
+                    <p>{props.address}</p>
                 </div>
             </div>
             <Popup
-              open={this.state.open}
+              open={open}
               position="center"
               spotlightRestrict="self-first"
-              onClose={() => { this.closePopup(); }}
+              onClose={() => { closePopup(); }}
               style={{ height: "800px", width: "800px", display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <h1 style={{ color: "white" }}>
-                    {this.props.name}
+                    {props.name}
                 </h1>
-                <MapOnce lat={this.props.lat} lng={this.props.lng} ></MapOnce>
+                <MapOnce lat={props.lat} lng={props.lng} ></MapOnce>
                 <h3 style={{ margin: "50px", color: "white" }}>
                   주소, 화재 발생 시간, 화재 진압 시간 등..
                 </h3>
@@ -61,8 +51,7 @@ class CompleteDetail extends React.Component {
                     margin: "10px",
                     textAlign: "center"
                     }}
-                    onClick={() => {this.closePopup();} }
-                    >
+                    onClick={() => {closePopup();} }>
                         Complete
                     </div>
                     <div
@@ -75,14 +64,13 @@ class CompleteDetail extends React.Component {
                     margin: "10px",
                     textAlign: "center"
                     }}
-                    onClick={()=> {this.closePopup();} }>
+                    onClick={()=> {closePopup();} }>
                         Close
                     </div>
                 </div>
             </Popup>
           </div>
         );
-    }
 }
 
 export default CompleteDetail;

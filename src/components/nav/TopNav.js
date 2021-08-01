@@ -1,50 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Row, Cell } from '@enact/ui/Layout';
 import * as FaIcons from 'react-icons/fa';
 import PopupTapLayout, { Tab, TabPanel, TabPanels } from '@enact/sandstone/PopupTabLayout';
 import Item from '@enact/sandstone/Item';
 
-class TopNav extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            sidebar: false,
-        };
-    }
+const TopNav = (props) => {
+    const [sidebar, setSidebar] = useState(false);
 
-    showSidebar() {
-        this.setState({
-            sidebar: true
-        });
+    const showSidebar = () => {
+        setSidebar(true);
         console.log("open sidebar");
     }
 
-    closeSidebar() {
-        this.setState({
-            sidebar: false
-        });
+    const closeSidebar = () => {
+        setSidebar(false);
         console.log("close sidebar");
     }
 
-    render(props) {
-        return (
+    return (
             <div style={{ color: 'black' }}>
                 <Row>
                     <Cell component="header">
-                        <h2 style={{ fontSize: '50px' }}>{this.props.title}</h2>
-                        <p style={{ fontSize: '30px' }}>{this.props.subtitle}</p>
+                        <h2 style={{ fontSize: '50px' }}>{props.title}</h2>
+                        <p style={{ fontSize: '30px' }}>{props.subtitle}</p>
                     </Cell>
                     <Cell size="10%" style={{
                         display: 'flex',
                         position : 'relative',
                         alignItems: 'center',
                         justifyContent: 'center'}}>
-                        <FaIcons.FaBars onClick={() => {this.showSidebar()}} />
+                        <FaIcons.FaBars onClick={() => {showSidebar()}} />
                     </Cell>
                 </Row>
                 <PopupTapLayout 
-                open={this.state.sidebar}
-                onClose={() => {this.closeSidebar()}}
+                open={sidebar}
+                onClose={() => {closeSidebar()}}
                 >
                     <Tab 
                     icon='home'
@@ -82,8 +72,7 @@ class TopNav extends React.Component {
 		            </Tab>
 	            </PopupTapLayout>
             </div>
-        );
-    }
+    );
 }
 
 export default TopNav;

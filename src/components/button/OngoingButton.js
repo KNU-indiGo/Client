@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
-class OngoingButton extends React.Component {
-    
-    handleComplete = index => {
+const OngoingButton = (props) => {
+    const [current, setCurrent] = useState(props.current)
+
+    const handleComplete = (index) => {
         console.log(index);
         axios({
             url: "http://ec2-52-78-90-230.ap-northeast-2.compute.amazonaws.com:8080/api/fire/contain/" + index,
@@ -13,9 +14,7 @@ class OngoingButton extends React.Component {
         });
     }
 
-    render() {
-        const { current } = this.props;
-        return (
+    return (
             <div
             style={{
                 background: "orange",
@@ -26,11 +25,10 @@ class OngoingButton extends React.Component {
                 margin: "10px",
                 textAlign: "center"
             }}
-            onClick={() => {this.handleComplete(current);} }>
+            onClick={() => {handleComplete(current);} }>
                 진압 중
             </div>
         );
-    }
 } 
 
 const mapStateToProps = state => ({

@@ -4,17 +4,15 @@ import React from 'react';
 
 import TopNav from '../components/nav/TopNav';
 
-class Graph extends React.Component {
+const Graph = () => {
   
-    render() {
-      return (
+    return (
         <Panel style={{background: 'white', color: 'black'}}>
             <TopNav
             title="Statistics"/>
               <div> graph </div>
         </Panel>
       )
-    }
 }
 
 export default ThemeDecorator(Graph);

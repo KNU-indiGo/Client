@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import TopNav from '../components/nav/TopNav';
 import OngoingDetail from '../components/detail/OngoingDetail';
 import BottomNav from '../components/nav/BottomNav';
+import GoBackButton from '../components/button/GoBackButton';
 
 class OngoingList extends React.Component {
     constructor(props) {
@@ -56,18 +57,7 @@ class OngoingList extends React.Component {
                             )
                         })}
                     </div>
-                    <Link to="/" style={{ textDecoration: "none", margin: "20px" }}>
-                        <div
-                            style={{
-                                background: "green",
-                                color: "white",
-                                padding: "20px",
-                                borderRadius: "20px",
-                                width: "100px",
-                            }}>
-                            go back
-                        </div>
-                    </Link>
+                    <GoBackButton />
                     <BottomNav />
                 </Scroller>
             </Panel>

@@ -16,7 +16,7 @@ const Main = kind({
             title='Smart Fire Detection System'
             subtitle='Deagu Northern Fire Station' />
             <Scroller>
-                <div style={{ width: '1800px', height: '700px'}}>
+                <div style={{ width: '100%', height: '700px'}}>
                 <Map></Map>
                 </div>
                 <BottomNav />
