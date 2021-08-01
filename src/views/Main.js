@@ -11,7 +11,7 @@ const Main = kind({
     name: 'main',
 
     render: () => (
-        <Panel>
+        <Panel style={{background: 'white', color: 'black'}}>
             <TopNav
             title='Smart Fire Detection System'
             subtitle='Deagu Northern Fire Station' />

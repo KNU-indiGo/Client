@@ -37,7 +37,7 @@ class Statistics extends React.Component {
 
     render() {
         return (
-            <Panel style={{backgroud: 'white', color: 'black'}}>
+            <Panel style={{background: 'white', color: 'black'}}>
             <TopNav
                 title="Statistics" />
             <Scroller>

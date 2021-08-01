@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { GoogleMap, InfoWindow, useJsApiLoader, Marker } from '@react-google-maps/api';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import LS2Request from '@enact/webos/LS2Request';
 
 import { setCurrentPlace } from '../../store/actions/index';
 
@@ -10,6 +11,15 @@ const Map = (props) => {
     const [selected, setSelected] = useState(0);
     const [places, setPlaces] = useState([]);
     const [center, setCenter] = useState({ lat: 35.877960, lng: 128.592334 });
+    const [breakoutNum, setBreakoutNum] = useState(0);
+
+    var webOSBridge = new LS2Request();
+    const onToastSuccess = (msg) => {
+        console.log(msg);
+    }
+    const onToastFailure = (msg) => {
+        console.log(msg);
+    }
 
     useEffect(() => {
         axios({
@@ -18,6 +28,25 @@ const Map = (props) => {
         }).then((res) => {
             setPlaces(res.data);
         });
+        var temp = 0;
+        places.map((place) => {
+            if (place.status === "BREAKOUT")
+                temp += 1;
+        });
+        if (temp !== breakoutNum) {
+            setBreakoutNum(temp);
+            var parms = {
+                "message": "Fire Detected !!!!"
+            }
+            var lsRequest = {
+                "service":"luna://com.webos.notification",
+                "method":"createToast",
+                "parameters": parms,
+                "onSuccess": onToastSuccess,
+                "onFailure": onToastFailure
+            };
+            webOSBridge.send(lsRequest);
+        }
     })
 
     const onClickMarker = (id) => {
