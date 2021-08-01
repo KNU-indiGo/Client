@@ -19,7 +19,7 @@ class Statistics extends React.Component {
 
     componentDidMount() {
         axios({
-            url: "/api/fire/list",
+            url: "http://ec2-52-78-90-230.ap-northeast-2.compute.amazonaws.com:8080/api/fire/list",
             method: 'GET'
         }).then((res) => {
             this.setState({buildings: res.data});
@@ -28,7 +28,7 @@ class Statistics extends React.Component {
 
     componentDidUpdate() {
         axios({
-            url: "/api/fire/list",
+            url: "http://ec2-52-78-90-230.ap-northeast-2.compute.amazonaws.com:8080/api/fire/list",
             method: 'GET'
         }).then((res) => {
             this.setState({buildings: res.data});

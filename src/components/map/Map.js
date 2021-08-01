@@ -13,7 +13,7 @@ const Map = (props) => {
 
     useEffect(() => {
         axios({
-            url: "/api/fire/list",
+            url: "http://ec2-52-78-90-230.ap-northeast-2.compute.amazonaws.com:8080/api/fire/list",
             method: 'GET'
         }).then((res) => {
             setPlaces(res.data);

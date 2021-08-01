@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 
 import Main from '../views/Main';
 import CamList from '../views/CamList';
@@ -10,7 +10,7 @@ import OngoingList from '../views/OngoingList';
 
 export default function App() {
 	return(
-		<BrowserRouter>
+		<HashRouter>
 			<Switch>
 				<Route exact path="/" component={Main} />
 				<Route exact path="/camlist/:id" component={CamList} />
@@ -19,6 +19,6 @@ export default function App() {
 				<Route exact path="/completedlist" component={CompleteList} />
 				<Route exact path="/ongoinglist" component={OngoingList} />
 			</Switch>
-		</BrowserRouter>
+		</HashRouter>
 	)
 }

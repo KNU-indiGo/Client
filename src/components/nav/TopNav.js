@@ -51,7 +51,7 @@ class TopNav extends React.Component {
                     title="Home">
                         <TabPanels>
                             <TabPanel style={{ color: "white"}}>
-                                <Item onClick={() => {window.location.href="/"}} style={{marginTop:"1rem"}}>Go to Home</Item>
+                                <Item onClick={() => {window.location.hash="#/"}} style={{marginTop:"1rem"}}>Go to Home</Item>
                             </TabPanel>
                         </TabPanels>
                     </Tab>
@@ -61,7 +61,7 @@ class TopNav extends React.Component {
                         <TabPanels>
                             <TabPanel style={{ color: "white"}}>
                                 <Item 
-                                onClick={() => { window.location.href="/statistics" }} 
+                                onClick={() => { window.location.hash="#/statistics" }} 
                                 style={{ marginTop: "1rem" }}>See Statistics</Item>
                             </TabPanel>
                         </TabPanels>
@@ -72,10 +72,10 @@ class TopNav extends React.Component {
                         <TabPanels>
 				            <TabPanel style={{ color: "white"}}>
 					            <Item 
-                                onClick={() => {window.location.href="/ongoinglist"}}
+                                onClick={() => {window.location.hash="#/ongoinglist"}}
                                 style={{ marginTop: "1rem" }}>Ongoing List</Item>
 					            <Item 
-                                onClick={() => {window.location.href="/completedlist"}}
+                                onClick={() => {window.location.hash="#/completedlist"}}
                                 style={{ marginTop: "1rem" }}>Completed List</Item>
 				            </TabPanel>
 			            </TabPanels>

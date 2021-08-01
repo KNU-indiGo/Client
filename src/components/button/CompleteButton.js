@@ -8,7 +8,7 @@ class CompleteButton extends React.Component {
     handleComplete = index => {
         console.log(index);
         axios({
-            url: "/api/fire/put-out/" + index,
+            url: "http://ec2-52-78-90-230.ap-northeast-2.compute.amazonaws.com:8080/api/fire/put-out/" + index,
             method: 'PUT'
         }).then((res) => {
         });
