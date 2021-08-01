@@ -38,7 +38,13 @@ const CompleteDetail = (props) => {
                 </h1>
                 <MapOnce lat={props.lat} lng={props.lng} ></MapOnce>
                 <h3 style={{ margin: "50px", color: "white" }}>
-                  주소, 화재 발생 시간, 화재 진압 시간 등..
+                    {"Address : " + props.address}
+                </h3>
+                <h3 style={{ margin: "50px", color: "white" }}>
+                    {"Fire Start Time : " + props.breakout_time}
+                </h3>
+                <h3 style={{ margin: "50px", color: "white" }}>
+                    {"Fire End Time : " + props.putout_time}
                 </h3>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <div

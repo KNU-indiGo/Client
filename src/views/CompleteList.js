@@ -30,7 +30,7 @@ const CompleteList = (props) => {
             title="Complete List"/>
               <div style={{ justifyContent: "space-around", alignItems: "center", textAlign: "center", color: "black"}}>
                 {places.map((place, key) => {
-                  return <CompleteDetail key={key} name={place.building_name} address={place.address} lat={Number(place.latitude)} lng={Number(place.longitude)}></CompleteDetail>;
+                  return <CompleteDetail key={key} name={place.building_name} address={place.address} lat={Number(place.latitude)} lng={Number(place.longitude)} breakout_time={place.breakOutTime} putout_time={place.putOutTime}></CompleteDetail>;
                 })}
               </div>
               <GoBackButton />
