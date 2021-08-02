@@ -5,18 +5,19 @@ const StatisticsDetail = (props) => {
             <div {...props} 
             style={{ 
                 width: "400px", 
-                height: "200px", 
+                height: "100%", 
                 padding: "1rem", 
-                background: "lightgray", 
+                background: "white", 
                 color: "black",
-                borderRadius: "10px",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                flexDirection: "column" 
+                flexDirection: "column",
+                boxShadow: "1px 3px 8px 3px lightgray"
                 }}>
+                <img src="https://image.flaticon.com/icons/png/512/3616/3616479.png" style={{ width: '50px', height: '50px' }} />
                 <h3>{props.name}</h3>
-                <p>{props.address}</p>
+                {props.address}
             </div>
         )
 }
