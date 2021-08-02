@@ -14,7 +14,7 @@ const Main = kind({
         <Panel style={{background: 'white', color: 'black'}}>
             <TopNav
             title='Smart Fire Detection System'
-            subtitle='Deagu Northern Fire Station' />
+            back_history={0} />
             <Scroller>
                 <div style={{ width: '100%', height: '700px'}}>
                 <Map></Map>
