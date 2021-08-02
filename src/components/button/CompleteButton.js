@@ -17,7 +17,7 @@ const CompleteButton = (props) => {
     return (
             <div
             style={{
-                background: "green",
+                background: "#00e64d",
                 color: "white",
                 padding: "20px",
                 borderRadius: "20px",
@@ -26,7 +26,8 @@ const CompleteButton = (props) => {
                 textAlign: "center"
             }}
             onClick={() => {handleComplete(current);} }>
-                Complete
+                Change State<br/>
+                to Complete
             </div>
         );
 }

@@ -17,7 +17,7 @@ const OngoingButton = (props) => {
     return (
             <div
             style={{
-                background: "orange",
+                background: "#fbbf00",
                 color: "white",
                 padding: "20px",
                 borderRadius: "20px",
@@ -26,7 +26,8 @@ const OngoingButton = (props) => {
                 textAlign: "center"
             }}
             onClick={() => {handleComplete(current);} }>
-                진압 중
+                Change State<br/>
+                to Ongoing
             </div>
         );
 } 

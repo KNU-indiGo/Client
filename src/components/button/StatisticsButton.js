@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const StatisticsButton = (props) => {
     return (
+        <div>
             <Link
             to={{ pathname: `/statistics/${props.id}`,
                 state: {
@@ -16,18 +17,19 @@ const StatisticsButton = (props) => {
             style={{ textDecoration: "none" }}>
                 <div
                 style={{
-                    background: "orange",
+                    background: "#fd7567",
                     color: "white",
                     padding: "20px",
                     borderRadius: "20px",
-                    width: "100%",
+                    width: "200px",
                     margin: "10px",
-                    textAlign: "center"
+                    textAlign: "center",
                 }}>
                     See<br/>
                     Statistics
                 </div>
             </Link>
+            </div>
         );
 } 
 
