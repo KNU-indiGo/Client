@@ -1,10 +1,12 @@
 import React from 'react';
-import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader, Marker, Autocomplete } from '@react-google-maps/api';
 
 const MapOnce = (props) => {
     const mapStyle = {
-        width: '200px',
-        height: '150px',
+        width: props.width,
+        height: props.height,
+        marginLeft: "auto",
+        marginRight: "auto"
     };
     const { isLoaded } = useJsApiLoader({
         id: 'google-map-script',
