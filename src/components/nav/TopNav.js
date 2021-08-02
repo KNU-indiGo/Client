@@ -21,6 +21,15 @@ const TopNav = (props) => {
     return (
             <div style={{ color: 'black' }}>
                 <Row>
+                    {props.isMain &&
+                    <Cell size="10%" style={{
+                        display: 'flex',
+                        position : 'relative',
+                        alignItems: 'center',
+                        justifyContent: 'center'}}>
+                        <img src="https://image.flaticon.com/icons/png/512/785/785116.png" style={{ width: "50px", height: "50px" }} />
+                    </Cell>
+                    }
                     {props.back_history?
                     <Cell size="10%" style={{
                         display: 'flex',
