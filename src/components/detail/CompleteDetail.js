@@ -32,7 +32,7 @@ const CompleteDetail = (props) => {
                     boxShadow: "1px 3px 8px 3px lightgray"
                     }}
                 onClick={() => { openPopup(); }}>
-                <MapOnce lat={props.lat} lng={props.lng} ></MapOnce>
+                <MapOnce lat={props.lat} lng={props.lng} width="200px" height="150px"></MapOnce>
                 <div>
                     <h3>{props.name}</h3>
                     {props.address}
@@ -43,43 +43,40 @@ const CompleteDetail = (props) => {
               position="center"
               spotlightRestrict="self-first"
               onClose={() => { closePopup(); }}
-              style={{ height: "800px", width: "800px", display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                <h1 style={{ color: "white" }}>
+              style={{ backgroundColor:"white", color: "#464D52", height: "650px", width: "550px", display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <h1 style={{ textAlign: "center", fontSize: "45px"}}>
                     {props.name}
                 </h1>
-                <MapOnce lat={props.lat} lng={props.lng} ></MapOnce>
-                <h3 style={{ margin: "50px", color: "white" }}>
-                    {"Address : " + props.address}
+                <MapOnce lat={props.lat} lng={props.lng} width={"300px"} height={"180px"}></MapOnce>
+                <h3 style={{ margin: "10px", fontSize: "25px"}}>
+                    {"Address"}
                 </h3>
-                <h3 style={{ margin: "50px", color: "white" }}>
-                    {"Fire Start Time : " + props.breakout_time}
+                <p style={{ margin: "10px", fontSize: "20px"}}>
+                    {props.address}
+                </p>
+                <h3 style={{ margin: "10px", fontSize: "25px"}}>
+                    {"Fire Start Time"}
                 </h3>
-                <h3 style={{ margin: "50px", color: "white" }}>
-                    {"Fire End Time : " + props.putout_time}
+                <p style={{ margin: "10px", fontSize: "20px"}}>
+                    {props.breakout_time}
+                </p>
+                <h3 style={{ margin: "10px", fontSize: "25px"}}>
+                    {"Fire End Time"}
                 </h3>
+                <p style={{ margin: "10px", fontSize: "20px"}}>
+                    {props.putout_time}
+                </p>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <div
                     style={{
-                    background: "green",
+                    background: "#fd7567",
                     color: "white",
-                    padding: "20px",
+                    padding: "10px",
                     borderRadius: "20px",
-                    width: "200px",
+                    width: "100px",
                     margin: "10px",
-                    textAlign: "center"
-                    }}
-                    onClick={() => {closePopup();} }>
-                        Complete
-                    </div>
-                    <div
-                    style={{
-                    background: "red",
-                    color: "white",
-                    padding: "20px",
-                    borderRadius: "20px",
-                    width: "200px",
-                    margin: "10px",
-                    textAlign: "center"
+                    textAlign: "center",
+                    fontSize: "25px"
                     }}
                     onClick={()=> {closePopup();} }>
                         Close

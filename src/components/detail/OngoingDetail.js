@@ -17,7 +17,7 @@ const OngoingDetail = (props) => {
                 flexDirection: "column",
                 boxShadow: "1px 3px 8px 3px lightgray"
                 }}>
-                <MapOnce lat={props.lat} lng={props.lng} ></MapOnce>
+                <MapOnce lat={props.lat} lng={props.lng} width="200px" height="150px"></MapOnce>
                 <h3>{props.name}</h3>
                 {props.address}
             </div>
