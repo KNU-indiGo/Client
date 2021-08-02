@@ -9,7 +9,8 @@ const StatisticsButton = (props) => {
                     id: props.id,
                     name: props.name,
                     addr: props.addr,
-                    image_url: props.image_url
+                    image_url: props.image_url,
+                    back_history: 2
                 }
             }}
             style={{ textDecoration: "none" }}>

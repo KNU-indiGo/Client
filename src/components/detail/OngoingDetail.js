@@ -4,16 +4,23 @@ import MapOnce from '../map/MapOnce';
 
 const OngoingDetail = (props) => {
     return (
-          <div
-            style={{ padding: "20px" }}>
-            <div style={{display: "flex"}}>
+      <div {...props} 
+            style={{ 
+                width: "400px", 
+                height: "100%", 
+                padding: "1rem", 
+                background: "white", 
+                color: "black",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
+                boxShadow: "1px 3px 8px 3px lightgray"
+                }}>
                 <MapOnce lat={props.lat} lng={props.lng} ></MapOnce>
-                <div>
-                    <p>{props.name}</p>
-                    <p>{props.address}</p>
-                </div>
+                <h3>{props.name}</h3>
+                {props.address}
             </div>
-          </div>
         );
 }
 

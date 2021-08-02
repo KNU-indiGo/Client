@@ -36,7 +36,8 @@ const Statistics = () => {
                                 id: place.id,
                                 name: place.building_name,
                                 addr: place.address,
-                                image_url: place.image_url
+                                image_url: place.image_url,
+                                back_history: 2
                             }
                         }}
                         style={{ textDecoration: "none", margin: "1rem" }}>

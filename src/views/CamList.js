@@ -31,7 +31,8 @@ const CamList = (props) => {
             <TopNav 
             title={props.location.state.name} 
             subtitle={props.location.state.addr}
-            back_history={1} />
+            back_history={props.location.state.back_history}
+            id={props.location.state.id} />
             <Scroller>
               <div style={{ display: "flex", justifyContent: "space-around", alignItems: "center", textAlign: "center" }}>
                 {cams.map((cam, key) => {

@@ -88,7 +88,8 @@ const Map = (props) => {
                                             id: place.id,
                                             name: place.building_name,
                                             addr: place.address,
-                                            image_url: place.image_url
+                                            image_url: place.image_url,
+                                            back_history: 1
                                         }
                                     }}
                                     style={{ textDecoration: 'none' }}>

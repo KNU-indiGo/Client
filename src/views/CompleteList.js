@@ -27,7 +27,7 @@ const CompleteList = (props) => {
             <TopNav
             title="Complete List"
             back_history={1}/>
-              <div style={{ justifyContent: "space-around", alignItems: "center", textAlign: "center", color: "black", backgroundColor: "#e6e6e6", borderRadius: "20px"}}>
+              <div style={{ display: "flex", justifyContent: "space-around", flexDirection: "row", alignItems: "center", textAlign: "center", color: "black", flexFlow: "wrap" }}>
                 {places.map((place, key) => {
                   return <CompleteDetail key={key} name={place.building_name} address={place.address} lat={Number(place.latitude)} lng={Number(place.longitude)} breakout_time={place.breakOutTime} putout_time={place.putOutTime}></CompleteDetail>;
                 })}

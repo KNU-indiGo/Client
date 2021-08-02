@@ -17,10 +17,21 @@ const CompleteDetail = (props) => {
     }
     
     return (
-          <div
-            {...props}
-            style={{ padding: "20px" }}>
-            <div style={{display: "flex"}} onClick={() => { openPopup(); }}>
+          <div>
+            <div {...props}
+                style={{ 
+                    width: "400px", 
+                    height: "100%", 
+                    padding: "1rem", 
+                    background: "white", 
+                    color: "black",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    flexDirection: "column",
+                    boxShadow: "1px 3px 8px 3px lightgray"
+                    }}
+                onClick={() => { openPopup(); }}>
                 <MapOnce lat={props.lat} lng={props.lng} ></MapOnce>
                 <div>
                     <h3>{props.name}</h3>

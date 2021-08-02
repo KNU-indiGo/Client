@@ -10,7 +10,8 @@ const Graph = (props) => {
         <Panel style={{background: 'white', color: 'black'}}>
             <TopNav
             title="Statistics"
-            back_history={2}/>
+            back_history={props.location.state.back_history}
+            id={props.location.state.id}/>
             <div> {props.location.state.name} </div>
             <img
               src={props.location.state.image_url[0]}

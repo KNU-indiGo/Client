@@ -27,7 +27,7 @@ const TopNav = (props) => {
                         position : 'relative',
                         alignItems: 'center',
                         justifyContent: 'center'}}>
-                        <GoBackButton back_history={props.back_history}/>
+                        <GoBackButton back_history={props.back_history} id={props.id} name={props.title} addr={props.subtitle}/>
                     </Cell>
                     :""}
                     <Cell component="header">
