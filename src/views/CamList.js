@@ -40,7 +40,7 @@ const CamList = (props) => {
               </div>
               <GoBackButton />
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-                <StatisticsButton id={building.id} />
+                <StatisticsButton id={building.id} name={building.building_name} addr={building.address} image_url={building.image_url}/>
                   {(building.status === "BREAKOUT") ? <OngoingButton/> : ((building.status === "CONTAIN") ? <CompleteButton/> : "")}
               </div>
               <BottomNav/>

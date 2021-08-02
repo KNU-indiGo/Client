@@ -4,7 +4,14 @@ import { Link } from 'react-router-dom';
 const StatisticsButton = (props) => {
     return (
             <Link {...props}
-            to={{ pathname: `/statistics/${props.id}` }}
+            to={{ pathname: `/statistics/${props.id}`,
+                state: {
+                    id: props.id,
+                    name: props.name,
+                    addr: props.addr,
+                    image_url: props.image_url
+                }
+            }}
             style={{ textDecoration: "none" }}>
                 <div
                 style={{

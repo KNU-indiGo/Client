@@ -30,7 +30,14 @@ const Statistics = () => {
                     {places.map((place, key) => {
                         return (
                         <Link 
-                        to={{pathname:`/statistics/${place.id}`}}
+                        to={{pathname:`/statistics/${place.id}`, 
+                            state: {
+                                id: place.id,
+                                name: place.building_name,
+                                addr: place.address,
+                                image_url: place.image_url
+                            }
+                        }}
                         style={{ textDecoration: "none", margin: "1rem" }}>
                             <StatisticsDetail 
                             key={key}

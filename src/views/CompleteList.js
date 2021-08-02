@@ -18,7 +18,6 @@ const CompleteList = (props) => {
           url: "http://ec2-52-78-90-230.ap-northeast-2.compute.amazonaws.com:8080/api/fire/list/put-out",
           method: 'GET'
           }).then((res) => {
-            console.log(res.data);
             setPlaces(res.data);
         });
     })
@@ -28,7 +27,7 @@ const CompleteList = (props) => {
             <Scroller>
             <TopNav
             title="Complete List"/>
-              <div style={{ justifyContent: "space-around", alignItems: "center", textAlign: "center", color: "black"}}>
+              <div style={{ justifyContent: "space-around", alignItems: "center", textAlign: "center", color: "black", backgroundColor: "#e6e6e6", borderRadius: "20px"}}>
                 {places.map((place, key) => {
                   return <CompleteDetail key={key} name={place.building_name} address={place.address} lat={Number(place.latitude)} lng={Number(place.longitude)} breakout_time={place.breakOutTime} putout_time={place.putOutTime}></CompleteDetail>;
                 })}

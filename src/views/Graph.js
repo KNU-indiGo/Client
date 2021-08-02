@@ -4,13 +4,21 @@ import React from 'react';
 
 import TopNav from '../components/nav/TopNav';
 
-const Graph = () => {
-  
+const Graph = (props) => {
+  console.log(props.location.state.image_url);
     return (
         <Panel style={{background: 'white', color: 'black'}}>
             <TopNav
             title="Statistics"/>
-              <div> graph </div>
+            <div> {props.location.state.name} </div>
+            <img
+              src={props.location.state.image_url[0]}
+              alt="live_stream"
+              style={{ width: "600px", height: "600px" }}/>
+              <img
+              src={props.location.state.image_url[1]}
+              alt="live_stream"
+              style={{ width: "600px", height: "600px" }}/>
         </Panel>
       )
 }

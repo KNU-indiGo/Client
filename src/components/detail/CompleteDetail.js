@@ -23,8 +23,8 @@ const CompleteDetail = (props) => {
             <div style={{display: "flex"}} onClick={() => { openPopup(); }}>
                 <MapOnce lat={props.lat} lng={props.lng} ></MapOnce>
                 <div>
-                    <p>{props.name}</p>
-                    <p>{props.address}</p>
+                    <h3>{props.name}</h3>
+                    {props.address}
                 </div>
             </div>
             <Popup

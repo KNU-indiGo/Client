@@ -10,7 +10,7 @@ import { setCurrentPlace } from '../../store/actions/index';
 const Map = (props) => {
     const [selected, setSelected] = useState(0);
     const [places, setPlaces] = useState([]);
-    const [center, setCenter] = useState({ lat: 35.877960, lng: 128.592334 });
+    const [center, setCenter] = useState({ lat: 35.881484731213445, lng: 128.6035298597616 });
     const [breakoutNum, setBreakoutNum] = useState(0);
 
     var webOSBridge = new LS2Request();
@@ -87,7 +87,8 @@ const Map = (props) => {
                                         state: {
                                             id: place.id,
                                             name: place.building_name,
-                                            addr: place.address
+                                            addr: place.address,
+                                            image_url: place.image_url
                                         }
                                     }}
                                     style={{ textDecoration: 'none' }}>
