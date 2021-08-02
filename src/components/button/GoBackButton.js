@@ -1,23 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Icon from '@enact/sandstone/Icon';
 
-const GoBackButton = () => {
+const GoBackButton = (props) => {
+    if (props.back_history === 1) var next = '/';
+    else if (props.back_history === 2) next = '/statistics';
     return (
             <Link
-            to='/'
+            to={next}
             style={{ textDecoration: "none", margin: "20px" }}>
-                <div
-                style={{
-                    background: "green",
-                    color: "white",
-                    padding: "20px",
-                    borderRadius: "20px",
-                    width: "100px",
-                    margin: "10px",
-                    textAlign: "center"
-                }}>
-                    Go Back
-                </div>
+                <Icon style={{color: "black"}}>arrowlargeleft</Icon>
             </Link>
         );
 } 

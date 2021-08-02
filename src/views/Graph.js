@@ -9,7 +9,8 @@ const Graph = (props) => {
     return (
         <Panel style={{background: 'white', color: 'black'}}>
             <TopNav
-            title="Statistics"/>
+            title="Statistics"
+            back_history={2}/>
             <div> {props.location.state.name} </div>
             <img
               src={props.location.state.image_url[0]}

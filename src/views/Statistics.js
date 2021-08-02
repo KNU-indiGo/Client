@@ -24,7 +24,8 @@ const Statistics = () => {
     return (
             <Panel style={{background: 'white', color: 'black'}}>
             <TopNav
-                title="Statistics" />
+                title="Statistics" 
+                back_history={1}/>
             <Scroller>
                 <div style={{ display:"flex", justifyContent: "space-around", flexDirection:"row", alignItems: "center", textAlign: "center", color: "black", flexFlow: "wrap"  }}>
                     {places.map((place, key) => {

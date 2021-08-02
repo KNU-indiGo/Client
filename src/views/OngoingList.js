@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 import TopNav from '../components/nav/TopNav';
 import OngoingDetail from '../components/detail/OngoingDetail';
 import BottomNav from '../components/nav/BottomNav';
-import GoBackButton from '../components/button/GoBackButton';
 
 class OngoingList extends React.Component {
     constructor(props) {
@@ -39,7 +38,8 @@ class OngoingList extends React.Component {
             <Panel style={{ background: 'white', color: 'black' }}>
                 <Scroller>
                     <TopNav
-                        title="Ongoing List" />
+                        title="Ongoing List" 
+                        back_history={1}/>
                     <div style={{ justifyContent: "space-around", alignItems: "center", textAlign: "center", color: "black" }}>
                         {this.state.locations.map((place, key) => {
                             return (
@@ -57,7 +57,6 @@ class OngoingList extends React.Component {
                             )
                         })}
                     </div>
-                    <GoBackButton />
                     <BottomNav />
                 </Scroller>
             </Panel>

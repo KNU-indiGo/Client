@@ -9,7 +9,6 @@ import CamDetail from '../components/detail/CamDetail';
 import OngoingButton from '../components/button/OngoingButton';
 import CompleteButton from '../components/button/CompleteButton';
 import StatisticsButton from '../components/button/StatisticsButton';
-import GoBackButton from '../components/button/GoBackButton';
 import BottomNav from '../components/nav/BottomNav';
 
 const CamList = (props) => {
@@ -31,14 +30,14 @@ const CamList = (props) => {
         <Panel style={{background: 'white', color: 'black'}}>
             <TopNav 
             title={props.location.state.name} 
-            subtitle={props.location.state.addr} />
+            subtitle={props.location.state.addr}
+            back_history={1} />
             <Scroller>
               <div style={{ display: "flex", justifyContent: "space-around", alignItems: "center", textAlign: "center" }}>
                 {cams.map((cam, key) => {
                   return <CamDetail key={key} id={cam.id} name={cam.name}></CamDetail>;
                 })}
               </div>
-              <GoBackButton />
               <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
                 <StatisticsButton id={building.id} name={building.building_name} addr={building.address} image_url={building.image_url}/>
                   {(building.status === "BREAKOUT") ? <OngoingButton/> : ((building.status === "CONTAIN") ? <CompleteButton/> : "")}

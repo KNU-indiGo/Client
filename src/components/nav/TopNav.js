@@ -3,6 +3,7 @@ import { Row, Cell } from '@enact/ui/Layout';
 import * as FaIcons from 'react-icons/fa';
 import PopupTapLayout, { Tab, TabPanel, TabPanels } from '@enact/sandstone/PopupTabLayout';
 import Item from '@enact/sandstone/Item';
+import GoBackButton from '../button/GoBackButton';
 
 const TopNav = (props) => {
     const [sidebar, setSidebar] = useState(false);
@@ -20,6 +21,15 @@ const TopNav = (props) => {
     return (
             <div style={{ color: 'black' }}>
                 <Row>
+                    {props.back_history?
+                    <Cell size="10%" style={{
+                        display: 'flex',
+                        position : 'relative',
+                        alignItems: 'center',
+                        justifyContent: 'center'}}>
+                        <GoBackButton back_history={props.back_history}/>
+                    </Cell>
+                    :""}
                     <Cell component="header">
                         <h2 style={{ fontSize: '50px' }}>{props.title}</h2>
                         <p style={{ fontSize: '30px' }}>{props.subtitle}</p>

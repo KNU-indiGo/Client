@@ -8,7 +8,6 @@ import axios from 'axios';
 import TopNav from '../components/nav/TopNav';
 import CompleteDetail from '../components/detail/CompleteDetail';
 import BottomNav from '../components/nav/BottomNav';
-import GoBackButton from '../components/button/GoBackButton';
 
 const CompleteList = (props) => {
     const [places, setPlaces] = useState([])
@@ -26,13 +25,13 @@ const CompleteList = (props) => {
         <Panel style={{background: 'white', color: 'black'}}>
             <Scroller>
             <TopNav
-            title="Complete List"/>
+            title="Complete List"
+            back_history={1}/>
               <div style={{ justifyContent: "space-around", alignItems: "center", textAlign: "center", color: "black", backgroundColor: "#e6e6e6", borderRadius: "20px"}}>
                 {places.map((place, key) => {
                   return <CompleteDetail key={key} name={place.building_name} address={place.address} lat={Number(place.latitude)} lng={Number(place.longitude)} breakout_time={place.breakOutTime} putout_time={place.putOutTime}></CompleteDetail>;
                 })}
               </div>
-              <GoBackButton />
               <BottomNav />
             </Scroller>
         </Panel>
