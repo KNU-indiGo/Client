@@ -54,7 +54,7 @@ const CamList = (props) => {
                 flexDirection: "column" }}>
                 {cams.map((cam, key) => {
                   return (
-                    <div onClick={() => {handleClick(cam)}}>
+                    <div key={key} onClick={() => {handleClick(cam)}}>
                       <CamDetail
                       key={key}
                       name={cam.name}/>

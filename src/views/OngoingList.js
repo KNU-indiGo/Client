@@ -31,6 +31,7 @@ const OngoingList = (props) => {
                     {places.map((place, key) => {
                         return (
                             <Link
+                                key={key}
                                 to={{
                                     pathname: `/camlist/${place.id}`,
                                     state: {

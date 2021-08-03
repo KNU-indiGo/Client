@@ -30,7 +30,8 @@ const Statistics = () => {
                 <div style={{ display:"flex", justifyContent: "space-around", flexDirection:"row", alignItems: "center", textAlign: "center", color: "black", flexFlow: "wrap"  }}>
                     {places.map((place, key) => {
                         return (
-                        <Link 
+                        <Link
+                        key={key} 
                         to={{pathname:`/statistics/${place.id}`, 
                             state: {
                                 id: place.id,
