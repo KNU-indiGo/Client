@@ -1,12 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Row, Cell } from '@enact/ui/Layout';
 import * as FaIcons from 'react-icons/fa';
 import PopupTapLayout, { Tab, TabPanel, TabPanels } from '@enact/sandstone/PopupTabLayout';
 import Item from '@enact/sandstone/Item';
+import WebFont from 'webfontloader';
+
 import GoBackButton from '../button/GoBackButton';
 
 const TopNav = (props) => {
     const [sidebar, setSidebar] = useState(false);
+
+    useEffect(() => {
+        WebFont.load({
+            google: {
+                families: ['Roboto']
+            }
+        });
+    }, []);
 
     const showSidebar = () => {
         setSidebar(true);
@@ -19,7 +29,7 @@ const TopNav = (props) => {
     }
 
     return (
-            <div style={{ color: 'black' }}>
+            <div style={{ color: 'black', fontFamily: 'Roboto' }}>
                 <Row>
                     {props.isMain &&
                     <Cell size="10%" style={{
@@ -53,14 +63,13 @@ const TopNav = (props) => {
                 </Row>
                 <PopupTapLayout 
                 open={sidebar}
-                onClose={() => {closeSidebar()}}
-                >
+                onClose={() => {closeSidebar()}}>
                     <Tab 
                     icon='home'
                     title="Home">
                         <TabPanels>
                             <TabPanel style={{ color: "white"}}>
-                                <Item onClick={() => {window.location.hash="#/"}} style={{marginTop:"1rem"}}>Go to Home</Item>
+                                <Item onClick={() => {window.location.hash="#/"}} style={{marginTop:"1rem"}}>Go Home</Item>
                             </TabPanel>
                         </TabPanels>
                     </Tab>

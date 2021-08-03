@@ -3,6 +3,7 @@ import { Panel } from '@enact/sandstone/Panels';
 import ThemeDecorator from '@enact/sandstone/ThemeDecorator';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import WebFont from 'webfontloader';
 
 import TopNav from '../components/nav/TopNav';
 import StatisticsDetail from '../components/detail/StatisticsDetail';
@@ -13,6 +14,12 @@ const Statistics = () => {
     const [places, setPlaces] = useState([])
 
     useEffect(() => {
+        WebFont.load({
+            google: {
+                families: ['Roboto']
+            }
+        });
+        
         axios({
             url: "http://ec2-52-78-90-230.ap-northeast-2.compute.amazonaws.com:8080/api/fire/list",
             method: 'GET'
@@ -27,7 +34,15 @@ const Statistics = () => {
                 title="Statistics" 
                 back_history={1}/>
             <Scroller>
-                <div style={{ display:"flex", justifyContent: "space-around", flexDirection:"row", alignItems: "center", textAlign: "center", color: "black", flexFlow: "wrap"  }}>
+                <div style={{ 
+                    display:"flex", 
+                    justifyContent: "space-around", 
+                    flexDirection:"row", 
+                    alignItems: "center", 
+                    textAlign: "center", 
+                    color: "black", 
+                    flexFlow: "wrap",
+                    fontFamily: 'Roboto' }}>
                     {places.map((place, key) => {
                         return (
                         <Link

@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
+import WebFont from 'webfontloader';
 
 const CompleteButton = (props) => {
     const [current, setCurrent] = useState(props.current)
     
+    useEffect(() => {
+        WebFont.load({
+            google: {
+                families: ['Roboto']
+            }
+        });
+    }, [])
+
     const handleComplete = (index) => {
         console.log(index);
         axios({
@@ -23,7 +32,8 @@ const CompleteButton = (props) => {
                 borderRadius: "20px",
                 width: "200px",
                 margin: "10px",
-                textAlign: "center"
+                textAlign: "center",
+                fontFamily: "Roboto"
             }}
             onClick={() => {handleComplete(current);} }>
                 Change State<br/>
