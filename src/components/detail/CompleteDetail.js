@@ -43,7 +43,7 @@ const CompleteDetail = (props) => {
               position="center"
               spotlightRestrict="self-first"
               onClose={() => { closePopup(); }}
-              style={{ backgroundColor:"white", color: "#464D52", height: "650px", width: "550px", display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+              style={{ backgroundColor:"white", color: "#464D52", height: "100%px", width: "600px", display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                 <h1 style={{ textAlign: "center", fontSize: "45px"}}>
                     {props.name}
                 </h1>

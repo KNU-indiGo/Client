@@ -9,6 +9,7 @@ const OngoingDetail = (props) => {
                 width: "400px", 
                 height: "100%", 
                 padding: "1rem", 
+                margin: "1rem",
                 background: "white", 
                 color: "black",
                 display: "flex",

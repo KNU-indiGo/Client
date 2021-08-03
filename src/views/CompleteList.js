@@ -29,7 +29,7 @@ const CompleteList = (props) => {
             back_history={1}/>
               <div style={{ display: "flex", justifyContent: "space-around", flexDirection: "row", alignItems: "center", textAlign: "center", color: "black", flexFlow: "wrap" }}>
                 {places.map((place, key) => {
-                  return <CompleteDetail key={key} name={place.building_name} address={place.address} lat={Number(place.latitude)} lng={Number(place.longitude)} breakout_time={place.breakOutTime} putout_time={place.putOutTime}></CompleteDetail>;
+                  return <CompleteDetail key={key} name={place.building_name} address={place.address} lat={Number(place.latitude)} lng={Number(place.longitude)} breakout_time={place.breakOutTime.replace(/T/gi, ' ')} putout_time={place.putOutTime.replace(/T/gi, ' ')}></CompleteDetail>;
                 })}
               </div>
               <BottomNav />
