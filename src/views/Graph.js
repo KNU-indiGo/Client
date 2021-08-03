@@ -1,13 +1,27 @@
+import React, { useState, useEffect } from 'react';
 import { Panel } from '@enact/sandstone/Panels';
 import ThemeDecorator from '@enact/sandstone/ThemeDecorator';
 import { Cell, Row } from '@enact/ui/Layout';
 import Scroller from '@enact/ui/Scroller';
-import React from 'react';
-import BottomNav from '../components/nav/BottomNav';
+import * as FaIcons from 'react-icons/fa';
+import Popup from '@enact/sandstone/Popup';
 
 import TopNav from '../components/nav/TopNav';
+import BottomNav from '../components/nav/BottomNav';
 
 const Graph = (props) => {
+  const [open, setOpen] = useState(false);
+  
+  const openPopup = () => {
+    setOpen(true);
+    console.log("open popup");
+  }
+
+  const closePopup = () => {
+    setOpen(false);
+    console.log("close popup");
+  }
+
   console.log(props.location.state.image_url);
     return (
         <Panel style={{background: 'white', color: 'black'}}>
@@ -26,7 +40,16 @@ const Graph = (props) => {
                   style={{ width: "600px", height: "600px" }}/>
                   </Cell>
                 <Cell>
-                  <h4> asdf </h4>
+                  <div style={{ 
+                        display: 'flex',
+                        position : 'relative',
+                        alignItems: 'center',
+                        justifyContent: 'center' }}>
+                    <h4 style={{ marginRight: '1rem'}}> Fire hazard </h4>
+                    <FaIcons.FaRegQuestionCircle
+                    style={{ color: 'gray' }}
+                    onClick={() => {openPopup()}} />
+                  </div>
                   <img
                   src={props.location.state.image_url[1]}
                   alt="live_stream"
@@ -34,6 +57,30 @@ const Graph = (props) => {
                 </Cell>
               </Row>
               <BottomNav />
+              <Popup
+              open={open}
+              position="center"
+              spotlightRestrict="self-first"
+              onClose={() => { closePopup(); }}
+              style={{ backgroundColor:"white", color: "#464D52", height: "100%px", width: "1000px", display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                <img src="https://indigo-s3.s3.ap-northeast-2.amazonaws.com/fire_info.png" style={{ width: '900px'}} />
+                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <div
+                    style={{
+                    background: "#fd7567",
+                    color: "white",
+                    padding: "10px",
+                    borderRadius: "20px",
+                    width: "100px",
+                    margin: "10px",
+                    textAlign: "center",
+                    fontSize: "25px"
+                    }}
+                    onClick={()=> {closePopup();} }>
+                        Close
+                    </div>
+                </div>
+            </Popup>
             </Scroller>
         </Panel>
       )
