@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { w3cwebsocket as W3CWebSocket } from 'websocket';
 
-const client = new W3CWebSocket('ws://210.204.38.60:8080/ws');
+const client = new W3CWebSocket('ws://ec2-52-78-90-230.ap-northeast-2.compute.amazonaws.com:8080/ws');
 
 const StreamDetail = (props) => {
     const [people, setPeople] = useState(0);
@@ -21,7 +21,7 @@ const StreamDetail = (props) => {
       <div style={{ color: "black" }}>
         <h2>{props.cam.name}</h2>
           <img
-            src="https://image.flaticon.com/icons/png/512/1160/1160041.png"
+            src="http://121.65.177.244:8091/?action=stream"
             alt="live_stream"
             style={{ width: "500px", height: "500px", marginLeft: "auto", marginRight: "auto" }}/>
             <div style={{ display: "flex", justifyContent: "center", alignItems: "center", }}>
