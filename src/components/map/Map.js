@@ -4,7 +4,6 @@ import { GoogleMap, InfoWindow, useJsApiLoader, Marker } from '@react-google-map
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import LS2Request from '@enact/webos/LS2Request';
-import WebFont from 'webfontloader';
 
 import { setCurrentPlace } from '../../store/actions/index';
 
@@ -23,14 +22,8 @@ const Map = (props) => {
     }
 
     useEffect(() => {
-        WebFont.load({
-            google: {
-                families: ['Roboto']
-            }
-        });
-
         axios({
-            url: "http://ec2-52-78-90-230.ap-northeast-2.compute.amazonaws.com:8080/api/fire/list",
+            url: "http://ec2-52-78-90-230.ap-northeast-2.compute.amazonaws.com/api/fire/list",
             method: 'GET'
         }).then((res) => {
             setPlaces(res.data);
@@ -106,8 +99,7 @@ const Map = (props) => {
                                         color: 'black', 
                                         padding: 5, 
                                         borderRadius: 20,
-                                        alignItems: 'center',
-                                        fontFamily: 'Roboto' }}>
+                                        alignItems: 'center', }}>
                                         <h2>{place.building_name}</h2>
                                         <div style={{ fontSize: "15px" }}>{place.address}</div>
                                     </div>

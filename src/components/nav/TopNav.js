@@ -1,22 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Row, Cell } from '@enact/ui/Layout';
 import * as FaIcons from 'react-icons/fa';
 import PopupTapLayout, { Tab, TabPanel, TabPanels } from '@enact/sandstone/PopupTabLayout';
 import Item from '@enact/sandstone/Item';
-import WebFont from 'webfontloader';
 
 import GoBackButton from '../button/GoBackButton';
 
 const TopNav = (props) => {
     const [sidebar, setSidebar] = useState(false);
-
-    useEffect(() => {
-        WebFont.load({
-            google: {
-                families: ['Roboto']
-            }
-        });
-    }, []);
 
     const showSidebar = () => {
         setSidebar(true);
@@ -29,7 +20,7 @@ const TopNav = (props) => {
     }
 
     return (
-            <div style={{ color: 'black', fontFamily: 'Roboto' }}>
+            <div style={{ color: 'black' }}>
                 <Row>
                     {props.back_history?
                     <Cell size="10%" style={{

@@ -1,16 +1,6 @@
-import React, {useEffect} from 'react';
 import { Link } from 'react-router-dom';
-import WebFont from 'webfontloader';
 
 const StatisticsButton = (props) => {
-    useEffect(() => {
-        WebFont.load({
-            google: {
-                families: ['Roboto']
-            }
-        });
-    }, [])
-
     return (
         <div>
             <Link
@@ -33,7 +23,6 @@ const StatisticsButton = (props) => {
                     width: "200px",
                     margin: "10px",
                     textAlign: "center",
-                    fontFamily: "Roboto"
                 }}>
                     See<br/>
                     Statistics

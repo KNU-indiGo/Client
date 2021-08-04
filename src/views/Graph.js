@@ -1,11 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Panel } from '@enact/sandstone/Panels';
 import ThemeDecorator from '@enact/sandstone/ThemeDecorator';
 import { Cell, Row } from '@enact/ui/Layout';
 import Scroller from '@enact/ui/Scroller';
 import * as FaIcons from 'react-icons/fa';
 import Popup from '@enact/sandstone/Popup';
-import WebFont from 'webfontloader';
 
 import TopNav from '../components/nav/TopNav';
 import BottomNav from '../components/nav/BottomNav';
@@ -13,14 +12,6 @@ import BottomNav from '../components/nav/BottomNav';
 const Graph = (props) => {
   const [open, setOpen] = useState(false);
   
-  useEffect(() => {
-    WebFont.load({
-      google: {
-          families: ['Roboto']
-      }
-  });
-  }, [])
-
   const openPopup = () => {
     setOpen(true);
     console.log("open popup");
@@ -40,7 +31,7 @@ const Graph = (props) => {
             back_history={props.location.state.back_history}
             id={props.location.state.id}/>
             <Scroller style={{ textAlign: 'center' }}>
-              <Row style={{ textAlign: 'center', fontFamily: 'Roboto' }}>
+              <Row style={{ textAlign: 'center', }}>
                 <Cell>
                   <h4> Shortest path to the location </h4>
                   <img
@@ -84,7 +75,6 @@ const Graph = (props) => {
                     margin: "10px",
                     textAlign: "center",
                     fontSize: "25px",
-                    fontFamily: "Roboto"
                     }}
                     onClick={()=> {closePopup();} }>
                         Close

@@ -1,15 +1,4 @@
-import { useEffect } from 'react';
-import WebFont from 'webfontloader';
-
 const CamDetail = (props) => {
-    useEffect(() => {
-        WebFont.load({
-            google: {
-                families: ['Roboto']
-            }
-        });
-    }, [])
-
     return (
       <div style={{ 
         display: 'flex',
@@ -22,7 +11,6 @@ const CamDetail = (props) => {
         margin: "1rem",
         paddingLeft: "1rem",
         paddingRight: "1rem",
-        fontFamily: "Roboto"
        }}>
           <img
             src="https://image.flaticon.com/icons/png/512/1160/1160041.png"

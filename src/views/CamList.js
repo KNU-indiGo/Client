@@ -3,7 +3,6 @@ import { Panel } from '@enact/sandstone/Panels';
 import Scroller from '@enact/sandstone/Scroller';
 import ThemeDecorator from '@enact/sandstone/ThemeDecorator';
 import axios from 'axios';
-import WebFont from 'webfontloader';
 
 import TopNav from '../components/nav/TopNav';
 import CamDetail from '../components/detail/CamDetail';
@@ -33,14 +32,9 @@ const CamList = (props) => {
     const [isSelected, setIsSelected] = useState(false);
 
     useEffect(() => {
-      WebFont.load({
-        google: {
-            families: ['Roboto']
-        }
-    });
     
         axios({
-            url: "http://ec2-52-78-90-230.ap-northeast-2.compute.amazonaws.com:8080/api/fire/list",
+            url: "http://ec2-52-78-90-230.ap-northeast-2.compute.amazonaws.com/api/fire/list",
             method: 'GET'
             }).then((res) => {
             res.data.map((place) => {
@@ -90,8 +84,7 @@ const CamList = (props) => {
                 justifyContent: 'center', 
                 alignItems: 'center', 
                 flexDirection: 'column',
-                textAlign: 'center',
-                fontFamily: 'Roboto' }}>
+                textAlign: 'center', }}>
                 { isSelected ? 
                 <StreamDetail cam={stream} /> :
                 <div style={{ color: "gray", margin: "5rem" }}> Please select a cam </div> }

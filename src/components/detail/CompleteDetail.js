@@ -1,19 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Popup from '@enact/sandstone/Popup';
-import WebFont from 'webfontloader';
 
 import MapOnce from '../map/MapOnce';
 
 const CompleteDetail = (props) => {
     const [open, setOpen] = useState(false);
-
-    useEffect(() => {
-        WebFont.load({
-            google: {
-                families: ['Roboto']
-            }
-        });
-    }, [])
 
     const openPopup = () => {
         setOpen(true);
@@ -40,7 +31,6 @@ const CompleteDetail = (props) => {
                     alignItems: "center",
                     flexDirection: "column",
                     boxShadow: "1px 3px 8px 3px lightgray",
-                    fontFamily: 'Roboto'
                     }}
                 onClick={() => { openPopup(); }}>
                 <MapOnce lat={props.lat} lng={props.lng} width="200px" height="150px"></MapOnce>
@@ -61,8 +51,7 @@ const CompleteDetail = (props) => {
                   width: "600px", 
                   display: 'flex', 
                   justifyContent: 'center', 
-                  alignItems: 'center',
-                  fontFamily: 'Roboto' }}>
+                  alignItems: 'center', }}>
                 <h1 style={{ textAlign: "center", fontSize: "45px"}}>
                     {props.name}
                 </h1>
