@@ -1,7 +1,7 @@
 import { Panel } from '@enact/sandstone/Panels';
 import Scroller from '@enact/sandstone/Scroller';
 import ThemeDecorator from '@enact/sandstone/ThemeDecorator';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -9,7 +9,7 @@ import TopNav from '../components/nav/TopNav';
 import OngoingDetail from '../components/detail/OngoingDetail';
 import BottomNav from '../components/nav/BottomNav';
 
-const OngoingList = (props) => {
+const OngoingList = () => {
     const [places, setPlaces] = useState([]);
 
     useEffect(() => {

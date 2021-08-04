@@ -1,5 +1,3 @@
-import React from 'react';
-
 const StatisticsDetail = (props) => {    
     return (
             <div {...props} 

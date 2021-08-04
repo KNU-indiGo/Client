@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Panel } from '@enact/sandstone/Panels';
 import Scroller from '@enact/sandstone/Scroller';
 import ThemeDecorator from '@enact/sandstone/ThemeDecorator';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import TopNav from '../components/nav/TopNav';
 import CompleteDetail from '../components/detail/CompleteDetail';
 import BottomNav from '../components/nav/BottomNav';
 
-const CompleteList = (props) => {
+const CompleteList = () => {
     const [places, setPlaces] = useState([])
 
     useEffect(() => {

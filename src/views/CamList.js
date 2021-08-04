@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Panel } from '@enact/sandstone/Panels';
 import Scroller from '@enact/sandstone/Scroller';
 import ThemeDecorator from '@enact/sandstone/ThemeDecorator';
@@ -13,6 +13,19 @@ import StatisticsButton from '../components/button/StatisticsButton';
 import BottomNav from '../components/nav/BottomNav';
 import { Row, Cell } from '@enact/ui/Layout';
 import StreamDetail from '../components/detail/StreamDetail';
+
+const cams = [
+  {id: 1, name: "cam1"},
+  {id: 2, name: "cam2"},
+  {id: 3, name: "cam3"},
+  /*{id: 4, name: "cam4"},
+  {id: 5, name: "cam5"},
+  {id: 6, name: "cam6"},
+  {id: 7, name: "cam7"},
+  {id: 8, name: "cam8"},
+  {id: 9, name: "cam9"},
+  {id: 10, name: "cam10"}*/
+]
 
 const CamList = (props) => {
     const [building, setBuilding] = useState([]);
@@ -31,8 +44,9 @@ const CamList = (props) => {
             method: 'GET'
             }).then((res) => {
             res.data.map((place) => {
-            if (place.building_name === props.location.state.name)
+            if (place.building_name === props.location.state.name) {
               setBuilding(place);
+            }
         });
       });
     })
@@ -100,18 +114,5 @@ const CamList = (props) => {
         </Panel>
     )
 }
-
-const cams = [
-  {id: 1, name: "cam1"},
-  {id: 2, name: "cam2"},
-  {id: 3, name: "cam3"},
-  /*{id: 4, name: "cam4"},
-  {id: 5, name: "cam5"},
-  {id: 6, name: "cam6"},
-  {id: 7, name: "cam7"},
-  {id: 8, name: "cam8"},
-  {id: 9, name: "cam9"},
-  {id: 10, name: "cam10"}*/
-]
 
 export default ThemeDecorator(CamList);

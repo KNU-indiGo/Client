@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Panel } from '@enact/sandstone/Panels';
 import ThemeDecorator from '@enact/sandstone/ThemeDecorator';
 import { Cell, Row } from '@enact/ui/Layout';
@@ -72,7 +72,7 @@ const Graph = (props) => {
               spotlightRestrict="self-first"
               onClose={() => { closePopup(); }}
               style={{ backgroundColor:"white", color: "#464D52", height: "100%px", width: "1000px", display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                <img src="https://indigo-s3.s3.ap-northeast-2.amazonaws.com/fire_info_2.png" style={{ width: '900px'}} />
+                <img src="https://indigo-s3.s3.ap-northeast-2.amazonaws.com/fire_info_2.png" style={{ width: '900px'}} alt="fire_info"/>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <div
                     style={{

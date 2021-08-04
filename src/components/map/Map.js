@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { GoogleMap, InfoWindow, useJsApiLoader, Marker } from '@react-google-maps/api';
 import { Link } from 'react-router-dom';
@@ -37,8 +37,9 @@ const Map = (props) => {
         });
         var temp = 0;
         places.map((place) => {
-            if (place.status === "BREAKOUT")
+            if (place.status === "BREAKOUT") {
                 temp += 1;
+            }
         });
         if (temp !== breakoutNum) {
             setBreakoutNum(temp);
