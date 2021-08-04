@@ -50,7 +50,7 @@ const TopNav = (props) => {
                         position : 'relative',
                         alignItems: 'center',
                         justifyContent: 'center'}}>
-                        <FaIcons.FaBars onClick={() => {showSidebar()}} />
+                        <FaIcons.FaBars style={{ width: "50px", height: "50px" }} onClick={() => {showSidebar()}} />
                     </Cell>
                 </Row>
                 <PopupTapLayout 
