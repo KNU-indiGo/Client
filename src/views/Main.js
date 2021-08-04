@@ -14,7 +14,6 @@ const Main = kind({
     render: () => (
         <Panel style={{background: 'white', color: 'black'}}>
             <TopNav
-            title='Smart Fire Detection System'
             back_history={0}
             isMain={true} />
             <Scroller>

@@ -31,15 +31,6 @@ const TopNav = (props) => {
     return (
             <div style={{ color: 'black', fontFamily: 'Roboto' }}>
                 <Row>
-                    {props.isMain &&
-                    <Cell size="10%" style={{
-                        display: 'flex',
-                        position : 'relative',
-                        alignItems: 'center',
-                        justifyContent: 'center'}}>
-                        <img src="https://image.flaticon.com/icons/png/512/785/785116.png" style={{ width: "50px", height: "50px" }} />
-                    </Cell>
-                    }
                     {props.back_history?
                     <Cell size="10%" style={{
                         display: 'flex',
@@ -48,7 +39,17 @@ const TopNav = (props) => {
                         justifyContent: 'center'}}>
                         <GoBackButton back_history={props.back_history} id={props.id} name={props.title} addr={props.subtitle}/>
                     </Cell>
-                    :""}
+                    :<Cell size="93%" style={{
+                        display: 'flex',
+                        position : 'relative',
+                        alignItems: 'center',
+                        justifyContent: 'center'}}>
+                        <img
+                            src="https://indigo-s3.s3.ap-northeast-2.amazonaws.com/name.png"
+                            alt="title"
+                            style={{marginLeft: '100px'}}
+                            />
+                    </Cell>}
                     <Cell component="header">
                         <h2 style={{ fontSize: '50px' }}>{props.title}</h2>
                         <p style={{ fontSize: '30px' }}>{props.subtitle}</p>
