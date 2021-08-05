@@ -1,27 +1,6 @@
 # indiGo
 LG-WebOS internship project
 
-Notion link: https://www.notion.so/LG-193ad80b546749a3aa8438ac6af718d3
-
-
-
-<!-- ### Prerequisites -->
-
-<!-- ## Running / 실행
-
-어떻게 테스트가 이 시스템에서 돌아가는지에 대한 설명을 합니다
-
-### 테스트는 이런 식으로 동작합니다
-
-왜 이렇게 동작하는지, 설명합니다
-
-```
-예시
-``` -->
-
-<!-- ## Codes -->
-## Version Control
-* 2021.06.21 Started project
 
 ## Contributors
 
@@ -31,6 +10,27 @@ Notion link: https://www.notion.so/LG-193ad80b546749a3aa8438ac6af718d3
 * [nullyng](https://github.com/nullyng)
 * [ParkGyurim99](https://github.com/ParkGyurim99)
 
-<!-- ## Acknowledgments -->
+## Package & Install
+If there is a change in the code, follow the steps below.  
+If there is no change, just run step 4(install to webOS).  
 
-<!-- *  -->
+- run `npm install` at the top directory.
+
+- package enact project at the top directory of project.  
+```
+enact pack
+```  
+Then this will create dist folder in current directory.
+
+- build ipk file  
+```
+ares-package ./dist
+```
+ipk file will be created in current path.
+
+- install to webOS
+```
+ares-install --device TargetDevice <ipk file>
+```
+TargetDevice means emulator, raspberrypie 4, etc..
+
