@@ -1,4 +1,12 @@
 ## 2021 LGSI Hackathon - Silver Award 🥈
+### Contributors
+
+* [pinkishincoloragain](https://github.com/pinkishincoloragain)
+* [Go-Jaecheol](https://github.com/Go-Jaecheol)
+* [choi-jaewon](https://github.com/choi-jaewon)
+* [nullyng](https://github.com/nullyng)
+* [ParkGyurim99](https://github.com/ParkGyurim99)
+
 # Smart Fire Detection System
 
 * daily 59 deaths are caused in India ***by Fire*** / annually 1929 deaths are caused in Korea ***by Fire***  
@@ -39,15 +47,16 @@ The detailed ***Server*** structure is on the [KNU-Indigo/Server](https://github
 - Click "Change State to ..." button, we can see that button changed.
 - And we can check that the marker changed on the main page.
 
+![stat](https://user-images.githubusercontent.com/33208246/132967727-e9bbd909-66d6-4040-96c9-b679f8c2c0b0.JPG)  
+- The first graph calculates the most adjacent fire station and shows the route from the fire station to the fire scene.
+- The second graph marks the vulnerability of buildings using colors.
+- If the color is close to red or black, the building has more possibility of catching fire, explosion, and building collapse.
 
+![menu](https://user-images.githubusercontent.com/33208246/132967800-981ae075-5f9b-4dae-9153-3e3a8baad5c2.JPG)  
+![stats](https://user-images.githubusercontent.com/33208246/132967805-a1fee27b-663e-4d84-aa07-16cf214ca025.JPG)  
+![ongoing](https://user-images.githubusercontent.com/33208246/132967816-1f821606-c088-44f9-aef8-fe2af3a0de37.JPG)  
+![complete](https://user-images.githubusercontent.com/33208246/132967824-e2815bb2-3b65-4fc6-a869-3aed119bb12c.JPG)  
 
-## Contributors
-
-* [pinkishincoloragain](https://github.com/pinkishincoloragain)
-* [Go-Jaecheol](https://github.com/Go-Jaecheol)
-* [choi-jaewon](https://github.com/choi-jaewon)
-* [nullyng](https://github.com/nullyng)
-* [ParkGyurim99](https://github.com/ParkGyurim99)
 
 ## Package & Install
 If there is a change in the code, follow the steps below.  
