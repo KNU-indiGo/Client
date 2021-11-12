@@ -1,4 +1,7 @@
 ## 2021 LGSI Hackathon - Silver Award 🥈
+
+<img src = "https://user-images.githubusercontent.com/33208246/141521913-740cf05f-7b4b-42b3-aabd-bc17cb97d7e0.jpg" width="70%" height="70%">
+
 ### Contributors
 
 * [pinkishincoloragain](https://github.com/pinkishincoloragain)
